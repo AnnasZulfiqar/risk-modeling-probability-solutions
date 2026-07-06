@@ -1,0 +1,2109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Risk Modeling and Probability - New Exam Worked Solutions</title>
+  <style>
+    :root {
+      --bg: #f5f7f8;
+      --paper: #ffffff;
+      --ink: #172027;
+      --muted: #5b6873;
+      --line: #d9e0e5;
+      --accent: #0b6f6a;
+      --accent-2: #8f4a23;
+      --soft: #edf6f5;
+      --warn: #fff5e8;
+      --warn-line: #e7bd82;
+      --code: #25313b;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.62;
+      letter-spacing: 0;
+    }
+
+    header {
+      background: #10252c;
+      color: #ffffff;
+      padding: 32px 18px 24px;
+      border-bottom: 6px solid var(--accent);
+    }
+
+    header .wrap, main {
+      width: min(1120px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    h1, h2, h3, h4 {
+      line-height: 1.2;
+      margin: 0;
+      letter-spacing: 0;
+    }
+
+    h1 { font-size: 2rem; max-width: 920px; }
+
+    header p {
+      margin: 12px 0 0;
+      color: #d8e5e8;
+      max-width: 920px;
+    }
+
+    nav {
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      padding: 7px 10px;
+      border-radius: 6px;
+      font-size: 0.92rem;
+    }
+
+    main { padding: 28px 0 50px; }
+
+    section.paper, section.summary, .note, .question {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    section.paper, section.summary {
+      margin: 22px 0;
+      padding: 24px;
+    }
+
+    section.paper > h2, section.summary > h2 {
+      font-size: 1.55rem;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--line);
+    }
+
+    .question {
+      margin: 20px 0 28px;
+      padding: 20px;
+    }
+
+    .question h3 {
+      font-size: 1.25rem;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .part {
+      border-top: 1px solid var(--line);
+      padding-top: 14px;
+      margin-top: 18px;
+    }
+
+    .part h4 {
+      font-size: 1.05rem;
+      color: var(--accent-2);
+      margin-bottom: 8px;
+    }
+
+    .question-text, .topic, .rules, .check, .mistakes, .correction, .tipbox {
+      padding: 12px 14px;
+      border-radius: 6px;
+      margin: 12px 0;
+      overflow-x: auto;
+    }
+
+    .question-text {
+      background: #f8fafb;
+      border-left: 4px solid var(--accent);
+    }
+
+    .topic, .rules, .tipbox {
+      background: var(--soft);
+      border-left: 4px solid var(--accent);
+    }
+
+    .check {
+      background: #f1f7ef;
+      border-left: 4px solid #4d8b38;
+    }
+
+    .mistakes, .correction {
+      background: var(--warn);
+      border-left: 4px solid var(--warn-line);
+    }
+
+    .step {
+      margin: 14px 0;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #ffffff;
+      overflow-x: auto;
+    }
+
+    .step p {
+      margin: 8px 0 0;
+      color: var(--muted);
+    }
+
+    .label {
+      display: inline-block;
+      font-weight: 700;
+      color: var(--code);
+      margin-right: 4px;
+    }
+
+    ul, ol {
+      padding-left: 23px;
+      overflow-x: auto;
+    }
+
+    li + li { margin-top: 5px; }
+    li { max-width: 100%; }
+
+    .toc {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+      margin: 16px 0;
+    }
+
+    .toc a {
+      display: block;
+      color: var(--accent);
+      text-decoration: none;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 10px 12px;
+      background: #ffffff;
+    }
+
+    .formula-page {
+      break-before: page;
+      page-break-before: always;
+    }
+
+    .formula-list {
+      columns: 2 300px;
+      column-gap: 42px;
+      font-size: 0.92rem;
+      line-height: 1.48;
+    }
+
+    .formula-list li {
+      break-inside: avoid;
+      margin-bottom: 7px;
+    }
+
+    .formula-list mjx-container {
+      font-size: 92% !important;
+    }
+
+    mjx-container {
+      max-width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }
+
+    @media (max-width: 640px) {
+      header { padding: 24px 0 20px; }
+      header .wrap, main { width: min(100% - 24px, 1120px); }
+      h1 { font-size: 1.55rem; }
+      section.paper, section.summary { padding: 16px; }
+      .question { padding: 14px; }
+      .question-text, .topic, .rules, .check, .mistakes, .correction, .tipbox { padding: 10px; }
+    }
+
+    @media print {
+      body { background: #ffffff; }
+      header {
+        color: #000000;
+        background: #ffffff;
+        border-bottom: 2px solid #000000;
+      }
+      header p, nav a { color: #000000; }
+      nav { display: none; }
+      main, header .wrap { width: 100%; }
+      section.paper, section.summary, .question {
+        border: 0;
+        border-radius: 0;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        processEscapes: true
+      },
+      chtml: { scale: 1 }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>Risk Modeling and Probability - New Exam Worked Solutions</h1>
+      <p>Beginner-friendly worked solutions for the three new supplied papers: 2022/2023 July exam, 2024/2025 February exam, and 2025/2026 May exam. Each question is rewritten, explained, solved step by step, checked against the printed answer, and followed by formulae on a separate final page.</p>
+      <nav aria-label="Page navigation">
+        <a href="#notes">Notes</a>
+        <a href="#paper-202307">2022/2023 Paper</a>
+        <a href="#paper-202502">2024/2025 Paper</a>
+        <a href="#paper-202605">2025/2026 Paper</a>
+        <a href="#formulae">Formulae Used</a>
+        <a href="index.html">Previous Solutions</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="notes" class="summary">
+      <h2>Important Notes</h2>
+      <div class="note">
+        <p><span class="label">How to read this guide.</span> Every symbol is defined when it first appears. A short topic note explains what the question is testing, then the solution gives the standard exam method. Where the official PDF answer needs correction, I say so explicitly.</p>
+        <p><span class="label">Previous papers.</span> The earlier solved set is available here: <a href="index.html">Complete Worked Solutions</a>.</p>
+        <p><span class="label">Correction found.</span> In the 3/7/2023 paper, Question 3(c), the printed solution writes the general price formula with the initial value \(G_0\), but then omits \(Z_0=x/y\) from the two final displayed prices. The corrected prices include \(x/y\) and \((x/y)^2\). If \(x=y\), the printed final expressions happen to match.</p>
+      </div>
+      <div class="toc">
+        <a href="#p202307-q1">2022/2023 Q1 - ratios of uniform variables</a>
+        <a href="#p202307-q2">2022/2023 Q2 - exponential Brownian martingale</a>
+        <a href="#p202307-q3">2022/2023 Q3 - stock ratio pricing</a>
+        <a href="#p202502-q1">2024/2025 Q1 - beta distribution transforms</a>
+        <a href="#p202502-q2">2024/2025 Q2 - scale functions and martingales</a>
+        <a href="#p202502-q3">2024/2025 Q3 - stochastic volatility pricing</a>
+        <a href="#p202605-q1">2025/2026 Q1 - Pascal-gamma mixture</a>
+        <a href="#p202605-q2">2025/2026 Q2 - martingale density and Girsanov</a>
+        <a href="#p202605-q3">2025/2026 Q3 - nonlinear SDE solved by squaring</a>
+      </div>
+    </section>
+
+    <section id="paper-202307" class="paper">
+      <h2>Paper 98720 - 2022/2023 - Final Exam 3/7/2023</h2>
+
+      <article id="p202307-q1" class="question">
+        <h3>Question 1</h3>
+        <div class="question-text">
+          <p><span class="label">Complete question.</span> Let \(X\) and \(Y\) be independent uniform random variables on \([0,1]\).</p>
+          <ol>
+            <li>Find \(P(Y\le zX)\) for all \(z\ge0\). Distinguish \(z\in[0,1]\) and \(z>1\).</li>
+            <li>Obtain the density \(f_Z(z)\) of \(Z=Y/X\).</li>
+            <li>Hence derive the density of the proportion \(X/(X+Y)\).</li>
+          </ol>
+        </div>
+        <div class="topic">
+          <p><span class="label">Topic and purpose.</span> This tests geometric probability in the unit square, differentiating a cumulative distribution function, and transforming a random variable.</p>
+        </div>
+        <div class="rules">
+          <p><span class="label">Rules used.</span> If \((X,Y)\) is uniform on the square \([0,1]^2\), probabilities are areas. If \(F_Z(z)=P(Z\le z)\), then \(f_Z(z)=F_Z'(z)\) where the derivative exists. If \(W=g(Z)\), then \(f_W(w)=f_Z(g^{-1}(w))\left|\frac{d}{dw}g^{-1}(w)\right|\).</p>
+        </div>
+
+        <div class="part">
+          <h4>(a) Find \(P(Y\le zX)\)</h4>
+          <div class="step">
+            \[
+              P(Y\le zX)=\text{area of }\{(x,y):0\le x\le1,\ 0\le y\le1,\ y\le zx\}.
+            \]
+            <p>Because the joint density is \(1\) on the unit square, probability equals area.</p>
+          </div>
+          <div class="step">
+            <p><span class="label">Case 1: \(0\le z\le1\).</span> The line \(y=zx\) stays below \(y=1\) for every \(0\le x\le1\).</p>
+            \[
+              P(Y\le zX)=\int_0^1 zx\,dx
+              =z\left[\frac{x^2}{2}\right]_0^1
+              =\frac z2.
+            \]
+            <p>We integrate the height \(zx\) of the triangle under the line.</p>
+          </div>
+          <div class="step">
+            <p><span class="label">Case 2: \(z>1\).</span> The line \(y=zx\) reaches \(y=1\) when \(zx=1\), so \(x=1/z\).</p>
+            \[
+              P(Y\le zX)=\int_0^{1/z} zx\,dx+\int_{1/z}^1 1\,dx.
+            \]
+            <p>For \(x\le1/z\), the height is \(zx\). For \(x>1/z\), the whole vertical slice of height \(1\) is included.</p>
+          </div>
+          <div class="step">
+            \[
+              \int_0^{1/z} zx\,dx
+              =z\left[\frac{x^2}{2}\right]_0^{1/z}
+              =z\cdot\frac{1}{2z^2}
+              =\frac{1}{2z}.
+            \]
+            <p>This is the small triangle below the line before it hits the top of the square.</p>
+          </div>
+          <div class="step">
+            \[
+              \int_{1/z}^1 1\,dx=1-\frac1z.
+            \]
+            <p>This is the rectangle-like part where all \(y\)-values from \(0\) to \(1\) satisfy the inequality.</p>
+          </div>
+          <div class="step">
+            \[
+              P(Y\le zX)=\frac{1}{2z}+1-\frac1z
+              =1-\frac{1}{2z},\qquad z>1.
+            \]
+            <p>We combine the two areas.</p>
+          </div>
+          <div class="check">
+            <p><span class="label">PDF check.</span> This matches the printed answer: \(z/2\) for \(z\in[0,1]\) and \(1-1/(2z)\) for \(z>1\).</p>
+          </div>
+        </div>
+
+        <div class="part">
+          <h4>(b) Density of \(Z=Y/X\)</h4>
+          <div class="step">
+            \[
+              F_Z(z)=P(Z\le z)=P(Y/X\le z).
+            \]
+            <p>Since \(X>0\) except on a probability-zero event, we can multiply by \(X\).</p>
+          </div>
+          <div class="step">
+            \[
+              F_Z(z)=P(Y\le zX).
+            \]
+            <p>This is exactly the probability from part (a).</p>
+          </div>
+          <div class="step">
+            \[
+              F_Z(z)=
+              \begin{cases}
+              0, & z<0,\\
+              z/2, & 0\le z\le1,\\
+              1-\frac{1}{2z}, & z>1.
+              \end{cases}
+            \]
+            <p>Ratios \(Y/X\) are nonnegative, so the CDF is \(0\) for \(z<0\).</p>
+          </div>
+          <div class="step">
+            \[
+              f_Z(z)=F_Z'(z)=\frac12,\qquad 0<z<1.
+            \]
+            <p>We differentiate \(z/2\).</p>
+          </div>
+          <div class="step">
+            \[
+              f_Z(z)=\frac{d}{dz}\left(1-\frac{1}{2z}\right)
+              =\frac{1}{2z^2},\qquad z>1.
+            \]
+            <p>The derivative of \(-1/(2z)\) is \(1/(2z^2)\).</p>
+          </div>
+          <div class="check">
+            <p><span class="label">PDF check.</span> This matches the printed density.</p>
+          </div>
+        </div>
+
+        <div class="part">
+          <h4>(c) Density of \(W=X/(X+Y)\)</h4>
+          <div class="step">
+            \[
+              W=\frac{X}{X+Y}=\frac{1}{1+Y/X}=\frac{1}{1+Z}.
+            \]
+            <p>Dividing numerator and denominator by \(X\) expresses the proportion in terms of \(Z=Y/X\).</p>
+          </div>
+          <div class="step">
+            \[
+              w=\frac1{1+z}
+              \quad\Longrightarrow\quad
+              z=\frac{1-w}{w}.
+            \]
+            <p>We solve for the inverse transformation.</p>
+          </div>
+          <div class="step">
+            \[
+              \left|\frac{dz}{dw}\right|
+              =\left|-\frac1{w^2}\right|
+              =\frac1{w^2}.
+            \]
+            <p>This derivative is the Jacobian factor for the density transformation.</p>
+          </div>
+          <div class="step">
+            \[
+              z\le1
+              \quad\Longleftrightarrow\quad
+              \frac{1-w}{w}\le1
+              \quad\Longleftrightarrow\quad
+              w\ge\frac12.
+            \]
+            <p>This tells us which branch of \(f_Z\) to use.</p>
+          </div>
+          <div class="step">
+            \[
+              f_W(w)=f_Z\!\left(\frac{1-w}{w}\right)\frac1{w^2}.
+            \]
+            <p>We apply the transformation formula.</p>
+          </div>
+          <div class="step">
+            \[
+              f_W(w)=\frac12\cdot\frac1{w^2}
+              =\frac{1}{2w^2},\qquad \frac12\le w\le1.
+            \]
+            <p>For \(w\ge1/2\), the corresponding \(z\le1\), so \(f_Z(z)=1/2\).</p>
+          </div>
+          <div class="step">
+            \[
+              f_W(w)=
+              \frac{1}{2\left(\frac{1-w}{w}\right)^2}\cdot\frac1{w^2}
+              =\frac{1}{2(1-w)^2},\qquad 0<w<\frac12.
+            \]
+            <p>For \(w<1/2\), the corresponding \(z>1\), so we use \(f_Z(z)=1/(2z^2)\).</p>
+          </div>
+          <div class="mistakes">
+            <p><span class="label">Common mistakes.</span> The split point is \(w=1/2\), not \(z=1/2\). Always translate the interval through the inverse transformation.</p>
+          </div>
+          <div class="check">
+            <p><span class="label">PDF check.</span> This matches the printed answer.</p>
+          </div>
+        </div>
+      </article>
+
+      <article id="p202307-q2" class="question">
+        <h3>Question 2</h3>
+        <div class="question-text">
+          <p><span class="label">Complete question.</span> Let \(W_t\) be Brownian motion under probability \(P\), and let \(X_t=e^{W_t-t/2}\).</p>
+          <ol>
+            <li>Show that \(X_t\) is a martingale under \(P\).</li>
+            <li>Calculate \(E^P[X_t]\) and \(\operatorname{Var}^P(X_t)\).</li>
+            <li>Define \(Q\) by \(\left.\frac{dQ}{dP}\right|_t=X_t\). Use Girsanov's theorem to calculate \(E^P[W_te^{W_t}]\) and \(\operatorname{Var}^P(W_te^{W_t})\).</li>
+          </ol>
+        </div>
+        <div class="topic">
+          <p><span class="label">Topic and purpose.</span> This tests the exponential martingale of Brownian motion, lognormal moments, and measure change.</p>
+        </div>
+        <div class="rules">
+          <p><span class="label">Rules used.</span> If \(W_t-W_s\sim N(0,t-s)\), then \(E[e^{u(W_t-W_s)}]=e^{u^2(t-s)/2}\). Girsanov says that if \(dQ/dP=\exp(W_t-t/2)\), then under \(Q\), \(\widetilde W_t=W_t-t\) is Brownian motion.</p>
+        </div>
+
+        <div class="part">
+          <h4>(a) Show \(X_t\) is a martingale</h4>
+          <div class="step">
+            \[
+              E^P[X_t\mid\mathcal F_s]
+              =E^P[e^{W_t-t/2}\mid\mathcal F_s],\qquad 0\le s\le t.
+            \]
+            <p>To prove the martingale property, we condition on the information available at time \(s\).</p>
+          </div>
+          <div class="step">
+            \[
+              W_t=W_s+(W_t-W_s).
+            \]
+            <p>We split Brownian motion into the known value \(W_s\) and the future increment.</p>
+          </div>
+          <div class="step">
+            \[
+              E^P[e^{W_t-t/2}\mid\mathcal F_s]
+              =e^{W_s-t/2}E^P[e^{W_t-W_s}].
+            \]
+            <p>The factor \(e^{W_s-t/2}\) is known at time \(s\), and the increment is independent of \(\mathcal F_s\).</p>
+          </div>
+          <div class="step">
+            \[
+              E^P[e^{W_t-W_s}]=e^{(t-s)/2}.
+            \]
+            <p>This is the moment generating function of a normal random variable with variance \(t-s\), evaluated at \(u=1\).</p>
+          </div>
+          <div class="step">
+            \[
+              E^P[X_t\mid\mathcal F_s]
+              =e^{W_s-t/2}e^{(t-s)/2}
+              =e^{W_s-s/2}
+              =X_s.
+            \]
+            <p>The exponents combine because \(-t/2+(t-s)/2=-s/2\). This proves \(X_t\) is a martingale.</p>
+          </div>
+          <div class="check">
+            <p><span class="label">PDF check.</span> This matches the printed proof.</p>
+          </div>
+        </div>
+
+        <div class="part">
+          <h4>(b) Mean and variance of \(X_t\)</h4>
+          <div class="step">
+            \[
+              E^P[X_t]=E^P[X_0]=1.
+            \]
+            <p>A martingale has constant expectation, and \(X_0=e^0=1\).</p>
+          </div>
+          <div class="step">
+            \[
+              \operatorname{Var}^P(X_t)=E^P[X_t^2]-(E^P[X_t])^2.
+            \]
+            <p>Variance means second moment minus square of the mean.</p>
+          </div>
+          <div class="step">
+            \[
+              X_t^2=e^{2W_t-t}.
+            \]
+            <p>Squaring \(e^{W_t-t/2}\) doubles the exponent.</p>
+          </div>
+          <div class="step">
+            \[
+              E^P[X_t^2]=e^{-t}E^P[e^{2W_t}]
+              =e^{-t}e^{(2^2)t/2}
+              =e^{-t}e^{2t}
+              =e^t.
+            \]
+            <p>We use \(W_t\sim N(0,t)\), so \(E[e^{uW_t}]=e^{u^2t/2}\).</p>
+          </div>
+          <div class="step">
+            \[
+              \operatorname{Var}^P(X_t)=e^t-1.
+            \]
+            <p>The mean is \(1\), so its square is \(1\).</p>
+          </div>
+          <div class="check">
+            <p><span class="label">PDF check.</span> This matches the printed answer.</p>
+          </div>
+        </div>
+
+        <div class="part">
+          <h4>(c) Compute \(E^P[W_te^{W_t}]\) and \(\operatorname{Var}^P(W_te^{W_t})\)</h4>
+          <div class="step">
+            \[
+              e^{W_t}=e^{t/2}e^{W_t-t/2}=e^{t/2}X_t.
+            \]
+            <p>We rewrite \(e^{W_t}\) using the density \(X_t=dQ/dP\).</p>
+          </div>
+          <div class="step">
+            \[
+              E^P[W_te^{W_t}]
+              =e^{t/2}E^P[W_tX_t]
+              =e^{t/2}E^Q[W_t].
+            \]
+            <p>By the definition of \(Q\), \(E^P[H X_t]=E^Q[H]\).</p>
+          </div>
+          <div class="step">
+            \[
+              W_t=\widetilde W_t+t,\qquad E^Q[\widetilde W_t]=0.
+            \]
+            <p>Under \(Q\), \(\widetilde W_t=W_t-t\) is Brownian, so it has mean \(0\).</p>
+          </div>
+          <div class="step">
+            \[
+              E^P[W_te^{W_t}]=e^{t/2}t.
+            \]
+            <p>That gives the first required value.</p>
+          </div>
+          <div class="step">
+            \[
+              \operatorname{Var}^P(W_te^{W_t})
+              =E^P[W_t^2e^{2W_t}]-\left(E^P[W_te^{W_t}]\right)^2.
+            \]
+            <p>We need the second moment of \(W_te^{W_t}\).</p>
+          </div>
+          <div class="step">
+            \[
+              e^{2W_t}=e^{2t}e^{2W_t-2t}.
+            \]
+            <p>The factor \(e^{2W_t-2t}\) is another exponential martingale density.</p>
+          </div>
+          <div class="step">
+            <p>Define \(Q'\) by \(dQ'/dP=e^{2W_t-2t}\). Under \(Q'\), \(\widehat W_t=W_t-2t\) is Brownian, so \(W_t=\widehat W_t+2t\).</p>
+            \[
+              E^P[W_t^2e^{2W_t}]
+              =e^{2t}E^{Q'}[W_t^2]
+              =e^{2t}E^{Q'}[(\widehat W_t+2t)^2].
+            \]
+          </div>
+          <div class="step">
+            \[
+              E^{Q'}[(\widehat W_t+2t)^2]
+              =E[(\widehat W_t)^2]+4tE[\widehat W_t]+4t^2
+              =t+0+4t^2.
+            \]
+            <p>A Brownian motion at time \(t\) has mean \(0\) and variance \(t\).</p>
+          </div>
+          <div class="step">
+            \[
+              \operatorname{Var}^P(W_te^{W_t})
+              =e^{2t}(t+4t^2)-\left(te^{t/2}\right)^2
+              =e^{2t}(t+4t^2)-e^t t^2.
+            \]
+            <p>We subtract the square of the mean found earlier.</p>
+          </div>
+          <div class="mistakes">
+            <p><span class="label">Common mistakes.</span> Do not forget the deterministic factors \(e^{t/2}\) and \(e^{2t}\) when converting to the new probability measures.</p>
+          </div>
+          <div class="check">
+            <p><span class="label">PDF check.</span> This matches the printed answer.</p>
+          </div>
+        </div>
+      </article>
+
+      <article id="p202307-q3" class="question">
+        <h3>Question 3</h3>
+        <div class="question-text">
+          <p><span class="label">Complete question.</span> In a complete market with constant safe rate \(r\), under the risk-neutral measure \(Q\), two stocks \(X_t,Y_t\) follow</p>
+          \[
+            \frac{dX_t}{X_t}=r\,dt+\sigma^X dW_t^X,\qquad
+            \frac{dY_t}{Y_t}=r\,dt+\sigma^Y dW_t^Y,\qquad
+            X_0=x,\ Y_0=y,
+          \]
+          <p>where \(W^X,W^Y\) have constant correlation \(\rho\). Let \(Z_t=X_t/Y_t\).</p>
+          <ol>
+            <li>Find the risk-neutral SDE for \(Z_t\), in the form \(dZ_t=a(Z_t)dW_t^X+b(Z_t)dW_t^Y+c(Z_t)dt\).</li>
+            <li>Obtain the risk-neutral SDE for \(Z_t^2\).</li>
+            <li>Find the time-0 prices of contracts paying \(Z_T\) and \(Z_T^2\).</li>
+          </ol>
+        </div>
+        <div class="topic">
+          <p><span class="label">Topic and purpose.</span> This tests Ito's formula for a ratio, quadratic covariation, and risk-neutral pricing.</p>
+        </div>
+        <div class="rules">
+          <p><span class="label">Rules used.</span> For correlated Brownian motions, \(dW_t^XdW_t^Y=\rho\,dt\). Risk-neutral price at time \(0\) is \(e^{-rT}E^Q[\text{payoff}]\).</p>
+        </div>
+
+        <div class="part">
+          <h4>(a) SDE for \(Z_t=X_t/Y_t\)</h4>
+          <div class="step">
+            \[
+              Z_t=X_tY_t^{-1}.
+            \]
+            <p>Writing the ratio this way lets us use Ito's product and inverse rules.</p>
+          </div>
+          <div class="step">
+            \[
+              \frac{dZ_t}{Z_t}
+              =\frac{dX_t}{X_t}-\frac{dY_t}{Y_t}
+              -\frac{d[X,Y]_t}{X_tY_t}
+              +\frac{d[Y,Y]_t}{Y_t^2}.
+            \]
+            <p>This is the division rule. The last two terms are the second-order Brownian corrections.</p>
+          </div>
+          <div class="step">
+            \[
+              \frac{dX_t}{X_t}=r\,dt+\sigma^X dW_t^X,\qquad
+              \frac{dY_t}{Y_t}=r\,dt+\sigma^Y dW_t^Y.
+            \]
+            <p>We substitute the given stock dynamics.</p>
+          </div>
+          <div class="step">
+            \[
+              \frac{d[X,Y]_t}{X_tY_t}=\sigma^X\sigma^Y\rho\,dt,\qquad
+              \frac{d[Y,Y]_t}{Y_t^2}=(\sigma^Y)^2dt.
+            \]
+            <p>The covariance term uses the correlation \(\rho\); the variance term uses \(dW^Y dW^Y=dt\).</p>
+          </div>
+          <div class="step">
+            \[
+              \frac{dZ_t}{Z_t}
+              =\sigma^X dW_t^X-\sigma^Y dW_t^Y
+              +\sigma^Y(\sigma^Y-\sigma^X\rho)dt.
+            \]
+            <p>The \(r\,dt\) terms cancel because both stocks have the same risk-neutral drift.</p>
+          </div>
+          <div class="step">
+            \[
+              dZ_t=\sigma^X Z_t\,dW_t^X-\sigma^Y Z_t\,dW_t^Y
+              +\sigma^Y(\sigma^Y-\sigma^X\rho)Z_t\,dt.
+            \]
+            <p>Multiplying by \(Z_t\) gives the requested form.</p>
+          </div>
+          <div class="step">
+            \[
+              a(z)=\sigma^Xz,\qquad b(z)=-\sigma^Yz,\qquad
+              c(z)=\sigma^Y(\sigma^Y-\sigma^X\rho)z.
+            \]
+            <p>These are the functions requested by the problem.</p>
+          </div>
+          <div class="check">
+            <p><span class="label">PDF check.</span> This matches the printed SDE.</p>
+          </div>
+        </div>
+
+        <div class="part">
+          <h4>(b) SDE for \(Z_t^2\)</h4>
+          <div class="step">
+            \[
+              d(Z_t^2)=2Z_t\,dZ_t+(dZ_t)^2.
+            \]
+            <p>This is Ito's formula for the square function.</p>
+          </div>
+          <div class="step">
+            \[
+              \frac{d(Z_t^2)}{Z_t^2}
+              =2\frac{dZ_t}{Z_t}+\frac{d[Z,Z]_t}{Z_t^2}.
+            \]
+            <p>Dividing by \(Z_t^2\) makes the calculation cleaner.</p>
+          </div>
+          <div class="step">
+            \[
+              \frac{d[Z,Z]_t}{Z_t^2}
+              =
+              (\sigma^X)^2dt+(\sigma^Y)^2dt-2\sigma^X\sigma^Y\rho\,dt.
+            \]
+            <p>The minus sign appears because the \(dW^Y\) coefficient in \(dZ/Z\) is \(-\sigma^Y\).</p>
+          </div>
+          <div class="step">
+            \[
+              \frac{d(Z_t^2)}{Z_t^2}
+              =
+              2\sigma^X dW_t^X-2\sigma^Y dW_t^Y
+              +2\sigma^Y(\sigma^Y-\sigma^X\rho)dt
+              +\left((\sigma^X)^2+(\sigma^Y)^2-2\sigma^X\sigma^Y\rho\right)dt.
+            \]
+            <p>We substitute the SDE from part (a) and add the quadratic variation term.</p>
+          </div>
+          <div class="step">
+            \[
+              \frac{d(Z_t^2)}{Z_t^2}
+              =
+              2\sigma^X dW_t^X-2\sigma^Y dW_t^Y
+              +\left((\sigma^X)^2+3(\sigma^Y)^2-4\sigma^X\sigma^Y\rho\right)dt.
+            \]
+            <p>We collect the drift terms.</p>
+          </div>
+          <div class="check">
+            <p><span class="label">PDF check.</span> This matches the printed SDE.</p>
+          </div>
+        </div>
+
+        <div class="part">
+          <h4>(c) Prices of payoffs \(Z_T\) and \(Z_T^2\)</h4>
+          <div class="step">
+            \[
+              Z_0=\frac{x}{y}.
+            \]
+            <p>The initial value of the ratio matters in the price.</p>
+          </div>
+          <div class="step">
+            \[
+              \mu_Z=\sigma^Y(\sigma^Y-\sigma^X\rho).
+            \]
+            <p>This is the drift coefficient in \(dZ_t/Z_t\).</p>
+          </div>
+          <div class="step">
+            \[
+              E^Q[Z_T]=Z_0e^{\mu_ZT}.
+            \]
+            <p>A geometric Brownian motion with proportional drift \(\mu_Z\) has mean equal to initial value times \(e^{\mu_ZT}\).</p>
+          </div>
+          <div class="step">
+            \[
+              \text{Price}(Z_T)=e^{-rT}E^Q[Z_T]
+              =\frac{x}{y}e^{(-r+\sigma^Y(\sigma^Y-\sigma^X\rho))T}.
+            \]
+            <p>We discount the risk-neutral expectation.</p>
+          </div>
+          <div class="step">
+            \[
+              \mu_{Z^2}=(\sigma^X)^2+3(\sigma^Y)^2-4\sigma^X\sigma^Y\rho.
+            \]
+            <p>This is the drift coefficient in \(d(Z_t^2)/Z_t^2\).</p>
+          </div>
+          <div class="step">
+            \[
+              E^Q[Z_T^2]=Z_0^2e^{\mu_{Z^2}T}.
+            \]
+            <p>The initial value of \(Z_t^2\) is \(Z_0^2=(x/y)^2\).</p>
+          </div>
+          <div class="step">
+            \[
+              \text{Price}(Z_T^2)=e^{-rT}E^Q[Z_T^2]
+              =\left(\frac{x}{y}\right)^2e^{(-r+(\sigma^X)^2+3(\sigma^Y)^2-4\sigma^X\sigma^Y\rho)T}.
+            \]
+            <p>Again, we discount under the risk-neutral measure.</p>
+          </div>
+          <div class="correction">
+            <p><span class="label">PDF correction.</span> The printed solution states the general formula \(e^{-rT}E[G_T]=G_0e^{(\alpha-r)T}\), which is correct. It then omits \(G_0=Z_0=x/y\) and \(G_0=Z_0^2=(x/y)^2\) in the final two prices. The corrected prices are the two formulas above. If \(x=y\), the printed final lines match because \(Z_0=1\).</p>
+          </div>
+          <div class="mistakes">
+            <p><span class="label">Common mistakes.</span> Do not forget initial values in geometric Brownian motion expectations. The drift determines growth from the starting value; it does not replace the starting value.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="paper-202502" class="paper">
+      <h2>Paper 98720 - 2024/2025 - Final Exam 10/2/2025</h2>
+
+      <article id="p202502-q1" class="question">
+        <h3>Question 1</h3>
+        <div class="question-text">
+          <p><span class="label">Complete question.</span> The beta distribution with parameters \(\alpha,\beta>0\) has density</p>
+          \[
+            f(x)=x^{\alpha-1}(1-x)^{\beta-1}\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)},\qquad 0\le x\le1.
+          \]
+          <p>If \(X\) has this distribution, find \(E[X]\), \(\operatorname{Var}(X)\), the density of \(Y=X/(1-X)\), and the density of \(Z=\log Y\).</p>
+        </div>
+        <div class="topic">
+          <p><span class="label">Topic and purpose.</span> This tests beta moments, gamma-function identities, and transformations to the beta-prime and logit-beta distributions.</p>
+        </div>
+        <div class="rules">
+          <p><span class="label">Rules used.</span> The beta integral is \(\int_0^1x^{u-1}(1-x)^{v-1}\,dx=\Gamma(u)\Gamma(v)/\Gamma(u+v)\). Also \(\Gamma(q+1)=q\Gamma(q)\). For transformations, multiply by the absolute derivative of the inverse.</p>
+        </div>
+
+        <div class="part">
+          <h4>(a) Expectation of \(X\)</h4>
+          <div class="step">
+            \[
+              E[X]=\int_0^1 x f(x)\,dx.
+            \]
+            <p>Expectation is the integral of value times density.</p>
+          </div>
+          <div class="step">
+            \[
+              E[X]=\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}
+              \int_0^1x^\alpha(1-x)^{\beta-1}\,dx.
+            \]
+            <p>Multiplying by \(x\) changes \(x^{\alpha-1}\) into \(x^\alpha\).</p>
+          </div>
+          <div class="step">
+            \[
+              \int_0^1x^\alpha(1-x)^{\beta-1}\,dx
+              =\frac{\Gamma(\alpha+1)\Gamma(\beta)}{\Gamma(\alpha+\beta+1)}.
+            \]
+            <p>This is the beta integral with \(u=\alpha+1\) and \(v=\beta\).</p>
+          </div>
+          <div class="step">
+            \[
+              E[X]=
+              \frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}
+              \frac{\Gamma(\alpha+1)\Gamma(\beta)}{\Gamma(\alpha+\beta+1)}.
+            \]
+            <p>We substitute the beta integral.</p>
+          </div>
+          <div class="step">
+            \[
+              \Gamma(\alpha+1)=\alpha\Gamma(\alpha),\qquad
+              \Gamma(\alpha+\beta+1)=(\alpha+\beta)\Gamma(\alpha+\beta).
+            \]
+            <p>We use the gamma recursion formula.</p>
+          </div>
+          <div class="step">
+            \[
+              E[X]=\frac{\alpha}{\alpha+\beta}.
+            \]
+            <p>All matching gamma factors cancel.</p>
+          </div>
+          <div class="check">
+            <p><span class="label">PDF check.</span> This matches the printed answer.</p>
+          </div>
+        </div>
+
+        <div class="part">
+          <h4>(b) Variance of \(X\)</h4>
+          <div class="step">
+            \[
+              \operatorname{Var}(X)=E[X^2]-(E[X])^2.
+            \]
+            <p>We first need the second moment.</p>
+          </div>
+          <div class="step">
+            \[
+              E[X^2]=
+              \frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}
+              \int_0^1x^{\alpha+1}(1-x)^{\beta-1}\,dx.
+            \]
+            <p>Multiplying by \(x^2\) changes \(x^{\alpha-1}\) into \(x^{\alpha+1}\).</p>
+          </div>
+          <div class="step">
+            \[
+              \int_0^1x^{\alpha+1}(1-x)^{\beta-1}\,dx
+              =\frac{\Gamma(\alpha+2)\Gamma(\beta)}{\Gamma(\alpha+\beta+2)}.
+            \]
+            <p>This is the beta integral with \(u=\alpha+2\).</p>
+          </div>
+          <div class="step">
+            \[
+              \Gamma(\alpha+2)=(\alpha+1)\alpha\Gamma(\alpha),
+            \]
+            \[
+              \Gamma(\alpha+\beta+2)=(\alpha+\beta+1)(\alpha+\beta)\Gamma(\alpha+\beta).
+            \]
+            <p>We expand the gamma functions by two steps.</p>
+          </div>
+          <div class="step">
+            \[
+              E[X^2]=\frac{\alpha(\alpha+1)}{(\alpha+\beta)(\alpha+\beta+1)}.
+            \]
+            <p>After cancellation, this is the second moment.</p>
+          </div>
+          <div class="step">
+            \[
+              \operatorname{Var}(X)=
+              \frac{\alpha(\alpha+1)}{(\alpha+\beta)(\alpha+\beta+1)}
+              -\left(\frac{\alpha}{\alpha+\beta}\right)^2.
+            \]
+            <p>We subtract the square of the mean.</p>
+          </div>
+          <div class="step">
+            \[
+              \operatorname{Var}(X)=
+              \frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}.
+            \]
+            <p>Putting the fractions over a common denominator gives the standard beta variance formula.</p>
+          </div>
+          <div class="check">
+            <p><span class="label">PDF check.</span> This matches the printed answer.</p>
+          </div>
+        </div>
+
+        <div class="part">
+          <h4>(c) Density of \(Y=X/(1-X)\)</h4>
+          <div class="step">
+            \[
+              y=\frac{x}{1-x}
+              \quad\Longrightarrow\quad
+              x=\frac{y}{1+y}.
+            \]
+            <p>We solve the transformation for \(x\).</p>
+          </div>
+          <div class="step">
+            \[
+              \frac{dx}{dy}=\frac{1}{(1+y)^2}.
+            \]
+            <p>This derivative is the Jacobian factor.</p>
+          </div>
+          <div class="step">
+            \[
+              1-x=1-\frac{y}{1+y}=\frac{1}{1+y}.
+            \]
+            <p>We will substitute this into the beta density.</p>
+          </div>
+          <div class="step">
+            \[
+              f_Y(y)=f_X\!\left(\frac{y}{1+y}\right)\frac{1}{(1+y)^2},\qquad y>0.
+            \]
+            <p>This is the change-of-variables formula.</p>
+          </div>
+          <div class="step">
+            \[
+              f_Y(y)=
+              \frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}
+              \left(\frac{y}{1+y}\right)^{\alpha-1}
+              \left(\frac{1}{1+y}\right)^{\beta-1}
+              \frac{1}{(1+y)^2}.
+            \]
+            <p>We substitute \(x=y/(1+y)\) and \(1-x=1/(1+y)\).</p>
+          </div>
+          <div class="step">
+            \[
+              f_Y(y)=
+              \frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}
+              \frac{y^{\alpha-1}}{(1+y)^{\alpha+\beta}},
+              \qquad y>0.
+            \]
+            <p>All powers of \(1+y\) combine to \(\alpha+\beta\).</p>
+          </div>
+          <div class="check">
+            <p><span class="label">PDF check.</span> This matches the printed answer.</p>
+          </div>
+        </div>
+
+        <div class="part">
+          <h4>(d) Density of \(Z=\log Y\)</h4>
+          <div class="step">
+            \[
+              z=\log y
+              \quad\Longrightarrow\quad
+              y=e^z,\qquad -\infty<z<\infty.
+            \]
+            <p>Taking a logarithm maps \(y>0\) to all real \(z\).</p>
+          </div>
+          <div class="step">
+            \[
+              \frac{dy}{dz}=e^z.
+            \]
+            <p>This is the Jacobian factor.</p>
+          </div>
+          <div class="step">
+            \[
+              f_Z(z)=f_Y(e^z)e^z.
+            \]
+            <p>We substitute \(y=e^z\) into the density of \(Y\).</p>
+          </div>
+          <div class="step">
+            \[
+              f_Z(z)=
+              \frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}
+              \frac{(e^z)^{\alpha-1}}{(1+e^z)^{\alpha+\beta}}e^z.
+            \]
+            <p>We plug in the formula from part (c).</p>
+          </div>
+          <div class="step">
+            \[
+              f_Z(z)=
+              \frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}
+              \frac{e^{\alpha z}}{(1+e^z)^{\alpha+\beta}},
+              \qquad z\in\mathbb R.
+            \]
+            <p>The powers combine because \(e^{(\alpha-1)z}e^z=e^{\alpha z}\).</p>
+          </div>
+          <div class="mistakes">
+            <p><span class="label">Common mistakes.</span> Do not forget the extra \(e^z\) from \(dy/dz\). Without it the density will not integrate to \(1\).</p>
+          </div>
+          <div class="check">
+            <p><span class="label">PDF check.</span> This matches the printed answer.</p>
+          </div>
+        </div>
+      </article>
+
+      <article id="p202502-q2" class="question">
+        <h3>Question 2</h3>
+        <div class="question-text">
+          <p><span class="label">Complete question.</span> Let \(X_t\) be an Ito process</p>
+          \[
+            dX_t=b(X_t)dt+\sqrt{a(X_t)}\,dW_t,\qquad X_0=x,
+          \]
+          <p>where \(a\) is strictly positive. Show:</p>
+          <ol>
+            <li>If \(M_t=s(X_t)\) is a local martingale for \(s\in C^2\), then \(b(x)s'(x)+a(x)s''(x)/2=0\).</li>
+            <li>\(s(x)=\int^x e^{\int^y -2b(z)/a(z)\,dz}\,dy\) solves the equation, so \(s(X_t)\) is a local martingale.</li>
+            <li>\(M_t=e^{-(2\mu/\sigma^2)X_t}\) is a martingale if \(X_t=\mu t+\sigma W_t\).</li>
+            <li>\(M_t=X_t^{1-2\mu/\sigma^2}\) is a martingale if \(X_t=e^{(\mu-\sigma^2/2)t+\sigma W_t}\).</li>
+          </ol>
+        </div>
+        <div class="topic">
+          <p><span class="label">Topic and purpose.</span> This tests the generator of a diffusion, scale functions, and applying Ito's formula to build martingales.</p>
+        </div>
+        <div class="rules">
+          <p><span class="label">Rules used.</span> If \(dX_t=b(X_t)dt+\sqrt{a(X_t)}dW_t\), the infinitesimal generator is \(\mathcal L f(x)=b(x)f'(x)+\frac12a(x)f''(x)\). A process \(f(X_t)\) has zero drift exactly when \(\mathcal L f=0\).</p>
+        </div>
+
+        <div class="part">
+          <h4>(a) Derive the differential equation</h4>
+          <div class="step">
+            \[
+              M_t=s(X_t).
+            \]
+            <p>The function \(s\) is twice differentiable, so Ito's formula applies.</p>
+          </div>
+          <div class="step">
+            \[
+              dM_t=s'(X_t)dX_t+\frac12s''(X_t)d\langle X\rangle_t.
+            \]
+            <p>Ito's formula has a first derivative term and a second derivative term.</p>
+          </div>
+          <div class="step">
+            \[
+              d\langle X\rangle_t=a(X_t)dt.
+            \]
+            <p>The diffusion coefficient is \(\sqrt{a(X_t)}\), and its square is \(a(X_t)\).</p>
+          </div>
+          <div class="step">
+            \[
+              dM_t=
+              \left[b(X_t)s'(X_t)+\frac12a(X_t)s''(X_t)\right]dt
+              +s'(X_t)\sqrt{a(X_t)}\,dW_t.
+            \]
+            <p>We substitute the SDE for \(dX_t\).</p>
+          </div>
+          <div class="step">
+            \[
+              b(x)s'(x)+\frac{a(x)}2s''(x)=0.
+            \]
+            <p>A local martingale cannot have a nonzero drift term, so the bracketed drift must vanish.</p>
+          </div>
+          <div class="check">
+            <p><span class="label">PDF check.</span> This matches the printed equation.</p>
+          </div>
+        </div>
+
+        <div class="part">
+          <h4>(b) Verify the scale function</h4>
+          <div class="step">
+            \[
+              s(x)=\int^x \exp\left(\int^y-\frac{2b(z)}{a(z)}\,dz\right)dy.
+            \]
+            <p>The lower limits are arbitrary constants. Changing them only adds or multiplies by constants, which does not affect the zero-drift property.</p>
+          </div>
+          <div class="step">
+            \[
+              s'(x)=\exp\left(\int^x-\frac{2b(z)}{a(z)}\,dz\right).
+            \]
+            <p>By the fundamental theorem of calculus, the derivative of an integral up to \(x\) is the integrand at \(x\).</p>
+          </div>
+          <div class="step">
+            \[
+              s''(x)=
+              \left(-\frac{2b(x)}{a(x)}\right)
+              \exp\left(\int^x-\frac{2b(z)}{a(z)}\,dz\right).
+            \]
+            <p>We differentiate the exponential using the chain rule.</p>
+          </div>
+          <div class="step">
+            \[
+              b(x)s'(x)+\frac{a(x)}2s''(x)
+              =
+              b(x)e^{\int^x-2b/a}
+              +\frac{a(x)}2\left(-\frac{2b(x)}{a(x)}\right)e^{\int^x-2b/a}.
+            \]
+            <p>This line substitutes \(s'\) and \(s''\). The shorthand \(e^{\int^x-2b/a}\) means the same exponential as above.</p>
+          </div>
+          <div class="step">
+            \[
+              b(x)e^{\int^x-2b/a}-b(x)e^{\int^x-2b/a}=0.
+            \]
+            <p>The two terms cancel exactly, so \(s\) solves the differential equation.</p>
+          </div>
+          <div class="check">
+            <p><span class="label">PDF check.</span> This matches the printed verification.</p>
+          </div>
+        </div>
+
+        <div class="part">
+          <h4>(c) Martingale for arithmetic Brownian motion</h4>
+          <div class="step">
+            \[
+              X_t=\mu t+\sigma W_t
+              \quad\Longrightarrow\quad
+              dX_t=\mu\,dt+\sigma\,dW_t.
+            \]
+            <p>This process has constant drift \(\mu\) and constant volatility \(\sigma\).</p>
+          </div>
+          <div class="step">
+            \[
+              M_t=e^{-\frac{2\mu}{\sigma^2}X_t}.
+            \]
+            <p>We apply Ito's formula to this exponential function.</p>
+          </div>
+          <div class="step">
+            \[
+              f'(x)=-\frac{2\mu}{\sigma^2}f(x),\qquad
+              f''(x)=\frac{4\mu^2}{\sigma^4}f(x).
+            \]
+            <p>These are the first and second derivatives of \(f(x)=e^{-2\mu x/\sigma^2}\).</p>
+          </div>
+          <div class="step">
+            \[
+              dM_t=
+              \left[-\frac{2\mu}{\sigma^2}\mu+\frac12\frac{4\mu^2}{\sigma^4}\sigma^2\right]M_tdt
+              -\frac{2\mu}{\sigma^2}\sigma M_t\,dW_t.
+            \]
+            <p>We substitute \(dX_t\) and \((dX_t)^2=\sigma^2dt\).</p>
+          </div>
+          <div class="step">
+            \[
+              -\frac{2\mu^2}{\sigma^2}+\frac{2\mu^2}{\sigma^2}=0.
+            \]
+            <p>The drift cancels.</p>
+          </div>
+          <div class="step">
+            \[
+              dM_t=-\frac{2\mu}{\sigma}M_t\,dW_t.
+            \]
+            <p>Only a stochastic integral remains, so \(M_t\) is a local martingale. Its lognormal moments are finite on finite time intervals, so it is a martingale.</p>
+          </div>
+          <div class="check">
+            <p><span class="label">PDF check.</span> This matches the printed answer.</p>
+          </div>
+        </div>
+
+        <div class="part">
+          <h4>(d) Martingale for geometric Brownian motion</h4>
+          <div class="step">
+            \[
+              X_t=e^{(\mu-\sigma^2/2)t+\sigma W_t}.
+            \]
+            <p>This is the explicit solution of a geometric Brownian motion.</p>
+          </div>
+          <div class="step">
+            \[
+              dX_t=\mu X_tdt+\sigma X_tdW_t.
+            \]
+            <p>Ito's formula gives this SDE from the exponential expression.</p>
+          </div>
+          <div class="step">
+            \[
+              \gamma=1-\frac{2\mu}{\sigma^2},\qquad M_t=X_t^\gamma.
+            \]
+            <p>We name the exponent \(\gamma\) to simplify the algebra.</p>
+          </div>
+          <div class="step">
+            \[
+              dM_t=\gamma X_t^{\gamma-1}dX_t+\frac12\gamma(\gamma-1)X_t^{\gamma-2}(dX_t)^2.
+            \]
+            <p>This is Ito's formula for \(x^\gamma\).</p>
+          </div>
+          <div class="step">
+            \[
+              (dX_t)^2=\sigma^2X_t^2dt.
+            \]
+            <p>The Brownian part \(\sigma X_tdW_t\) is squared.</p>
+          </div>
+          <div class="step">
+            \[
+              dM_t=
+              \gamma X_t^\gamma(\mu dt+\sigma dW_t)
+              +\frac12\gamma(\gamma-1)\sigma^2X_t^\gamma dt.
+            \]
+            <p>We substitute \(dX_t\) and simplify powers of \(X_t\).</p>
+          </div>
+          <div class="step">
+            \[
+              \text{drift coefficient}
+              =
+              \gamma\mu+\frac12\gamma(\gamma-1)\sigma^2
+              =
+              \gamma\left(\mu+\frac12\left(-\frac{2\mu}{\sigma^2}\right)\sigma^2\right)=0.
+            \]
+            <p>Since \(\gamma-1=-2\mu/\sigma^2\), the drift cancels.</p>
+          </div>
+          <div class="step">
+            \[
+              dM_t=\gamma\sigma X_t^\gamma\,dW_t.
+            \]
+            <p>Only the Brownian term remains, so \(M_t\) is a martingale under the usual finite-moment condition.</p>
+          </div>
+          <div class="mistakes">
+            <p><span class="label">Common mistakes.</span> In part (d), do not forget that \(dX_t\) already contains \(X_t\). Missing this causes the powers of \(X_t\) to be wrong.</p>
+          </div>
+          <div class="check">
+            <p><span class="label">PDF check.</span> This matches the printed answer.</p>
+          </div>
+        </div>
+      </article>
+
+      <article id="p202502-q3" class="question">
+        <h3>Question 3</h3>
+        <div class="question-text">
+          <p><span class="label">Complete question.</span> The stock price \(S_t\) and volatility \(\sigma_t\) follow</p>
+          \[
+            \frac{dS_t}{S_t}=(\nu\sigma_t+r)dt+\sigma_t\,dW_t,\qquad
+            d\sigma_t=-\lambda\sigma_tdt+\delta\,dW_t,
+          \]
+          <p>with constants \(\delta,\lambda,\nu,r\). Find the risk-neutral dynamics of \(S_t\), the risk-neutral dynamics of \(\sigma_t\), and the prices of contracts paying \(\sigma_T\) and \(\sigma_T^2\).</p>
+        </div>
+        <div class="topic">
+          <p><span class="label">Topic and purpose.</span> This tests risk-neutral drift adjustment with one Brownian driver, solving an Ornstein-Uhlenbeck-type volatility SDE, and pricing by discounted expectation.</p>
+        </div>
+
+        <div class="part">
+          <h4>(a) Risk-neutral stock dynamics</h4>
+          <div class="step">
+            \[
+              \frac{dS_t}{S_t}=(\nu\sigma_t+r)dt+\sigma_t\,dW_t.
+            \]
+            <p>Under \(P\), the stock has excess drift \(\nu\sigma_t\).</p>
+          </div>
+          <div class="step">
+            \[
+              d\widetilde W_t=dW_t+\nu\,dt
+              \quad\Longleftrightarrow\quad
+              dW_t=d\widetilde W_t-\nu\,dt.
+            \]
+            <p>This is the Girsanov change that removes the excess stock drift.</p>
+          </div>
+          <div class="step">
+            \[
+              \frac{dS_t}{S_t}
+              =(\nu\sigma_t+r)dt+\sigma_t(d\widetilde W_t-\nu dt)
+              =r\,dt+\sigma_t\,d\widetilde W_t.
+            \]
+            <p>The \(\nu\sigma_tdt\) terms cancel.</p>
+          </div>
+          <div class="check">
+            <p><span class="label">PDF check.</span> This matches the printed risk-neutral stock dynamics.</p>
+          </div>
+        </div>
+
+        <div class="part">
+          <h4>(b) Risk-neutral volatility dynamics</h4>
+          <div class="step">
+            \[
+              d\sigma_t=-\lambda\sigma_tdt+\delta\,dW_t.
+            \]
+            <p>We now use the same Brownian substitution because the same \(W_t\) drives both equations.</p>
+          </div>
+          <div class="step">
+            \[
+              d\sigma_t=-\lambda\sigma_tdt+\delta(d\widetilde W_t-\nu dt).
+            \]
+            <p>Replace \(dW_t\) by \(d\widetilde W_t-\nu dt\).</p>
+          </div>
+          <div class="step">
+            \[
+              d\sigma_t=(-\lambda\sigma_t-\delta\nu)dt+\delta\,d\widetilde W_t.
+            \]
+            <p>The volatility drift is shifted by \(-\delta\nu\).</p>
+          </div>
+          <div class="check">
+            <p><span class="label">PDF check.</span> This matches the printed answer.</p>
+          </div>
+        </div>
+
+        <div class="part">
+          <h4>(c) Price of payoff \(\sigma_T\)</h4>
+          <div class="step">
+            \[
+              d\sigma_t=(-\lambda\sigma_t-\delta\nu)dt+\delta\,d\widetilde W_t.
+            \]
+            <p>This is a linear SDE.</p>
+          </div>
+          <div class="step">
+            \[
+              d(e^{\lambda t}\sigma_t)
+              =e^{\lambda t}d\sigma_t+\lambda e^{\lambda t}\sigma_tdt.
+            \]
+            <p>We multiply by the integrating factor \(e^{\lambda t}\).</p>
+          </div>
+          <div class="step">
+            \[
+              d(e^{\lambda t}\sigma_t)
+              =-\delta\nu e^{\lambda t}dt+\delta e^{\lambda t}d\widetilde W_t.
+            \]
+            <p>The \(-\lambda\sigma_t\) and \(+\lambda\sigma_t\) terms cancel.</p>
+          </div>
+          <div class="step">
+            \[
+              e^{\lambda T}\sigma_T
+              =\sigma_0-\delta\nu\int_0^T e^{\lambda s}ds
+              +\delta\int_0^T e^{\lambda s}d\widetilde W_s.
+            \]
+            <p>We integrate from \(0\) to \(T\).</p>
+          </div>
+          <div class="step">
+            \[
+              \int_0^T e^{\lambda s}ds=\frac{e^{\lambda T}-1}{\lambda}.
+            \]
+            <p>This is the ordinary exponential integral, assuming \(\lambda\ne0\).</p>
+          </div>
+          <div class="step">
+            \[
+              \sigma_T
+              =e^{-\lambda T}\sigma_0-\frac{\delta\nu}{\lambda}(1-e^{-\lambda T})
+              +\delta e^{-\lambda T}\int_0^T e^{\lambda s}d\widetilde W_s.
+            \]
+            <p>We multiply by \(e^{-\lambda T}\).</p>
+          </div>
+          <div class="step">
+            \[
+              E^Q[\sigma_T]
+              =e^{-\lambda T}\sigma_0-\frac{\delta\nu}{\lambda}(1-e^{-\lambda T}).
+            \]
+            <p>The stochastic integral has mean zero.</p>
+          </div>
+          <div class="step">
+            \[
+              \text{Price}(\sigma_T)
+              =e^{-rT}\left(e^{-\lambda T}\sigma_0-\frac{\delta\nu}{\lambda}(1-e^{-\lambda T})\right).
+            \]
+            <p>Risk-neutral pricing discounts the expected payoff.</p>
+          </div>
+          <div class="check">
+            <p><span class="label">PDF check.</span> This matches the printed answer.</p>
+          </div>
+        </div>
+
+        <div class="part">
+          <h4>(d) Price of payoff \(\sigma_T^2\)</h4>
+          <div class="step">
+            \[
+              A=e^{-\lambda T}\sigma_0-\frac{\delta\nu}{\lambda}(1-e^{-\lambda T}),
+            \]
+            \[
+              B=\delta e^{-\lambda T}\int_0^T e^{\lambda s}d\widetilde W_s.
+            \]
+            <p>From part (c), \(\sigma_T=A+B\), where \(A\) is deterministic and \(B\) has mean zero.</p>
+          </div>
+          <div class="step">
+            \[
+              E^Q[\sigma_T^2]=E[(A+B)^2]=A^2+2AE[B]+E[B^2]=A^2+\operatorname{Var}(B).
+            \]
+            <p>The middle term vanishes because \(E[B]=0\).</p>
+          </div>
+          <div class="step">
+            \[
+              \operatorname{Var}(B)
+              =\delta^2e^{-2\lambda T}\int_0^T e^{2\lambda s}ds.
+            \]
+            <p>We use Ito isometry for the stochastic integral.</p>
+          </div>
+          <div class="step">
+            \[
+              \int_0^T e^{2\lambda s}ds=\frac{e^{2\lambda T}-1}{2\lambda}.
+            \]
+            <p>This is another ordinary exponential integral.</p>
+          </div>
+          <div class="step">
+            \[
+              \operatorname{Var}(B)=\frac{\delta^2}{2\lambda}(1-e^{-2\lambda T}).
+            \]
+            <p>Multiplying by \(e^{-2\lambda T}\) changes \(e^{2\lambda T}-1\) into \(1-e^{-2\lambda T}\).</p>
+          </div>
+          <div class="step">
+            \[
+              \text{Price}(\sigma_T^2)
+              =e^{-rT}\left[
+              \left(e^{-\lambda T}\sigma_0-\frac{\delta\nu}{\lambda}(1-e^{-\lambda T})\right)^2
+              +\frac{\delta^2}{2\lambda}(1-e^{-2\lambda T})
+              \right].
+            \]
+            <p>We discount the second moment under the risk-neutral measure.</p>
+          </div>
+          <div class="mistakes">
+            <p><span class="label">Common mistakes.</span> Do not square only the mean. The random stochastic-integral term contributes its variance to \(E[\sigma_T^2]\).</p>
+          </div>
+          <div class="check">
+            <p><span class="label">PDF check.</span> This matches the printed answer.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="paper-202605" class="paper">
+      <h2>Paper 98720 - 2025/2026 - Final Exam 11/5/2026</h2>
+
+      <article id="p202605-q1" class="question">
+        <h3>Question 1</h3>
+        <div class="question-text">
+          <p><span class="label">Complete question.</span> Let \(r\in\{1,2,\ldots\}\), \(0<p<1\), and \(\beta>0\). Suppose \(N\) has the Pascal distribution</p>
+          \[
+            P(N=n)=\binom{n+r-1}{n}(1-p)^rp^n,\qquad n=0,1,2,\ldots.
+          \]
+          <p>Conditionally on \(N=n\), \(X\) has density</p>
+          \[
+            f_{X|N=n}(x)=\frac{\beta^{r+n}}{\Gamma(r+n)}x^{r+n-1}e^{-\beta x},\qquad x>0.
+          \]
+          <ol>
+            <li>Find the unconditional density of \(X\) and identify its distribution.</li>
+            <li>Find the conditional distribution of \(N\) given \(X=x\).</li>
+            <li>Compute \(E[N|X]\) and \(E[X|N]\).</li>
+            <li>Deduce \(E[N]\), \(E[X]\), and \(\operatorname{Cov}(N,X)\).</li>
+          </ol>
+        </div>
+        <div class="topic">
+          <p><span class="label">Topic and purpose.</span> This tests a negative-binomial/gamma mixture, Bayes' formula, conditional expectation, and covariance by conditioning.</p>
+        </div>
+
+        <div class="part">
+          <h4>(a) Unconditional density of \(X\)</h4>
+          <div class="step">
+            \[
+              f_X(x)=\sum_{n=0}^{\infty}P(N=n)f_{X|N=n}(x).
+            \]
+            <p>Because \(N\) is discrete, we sum the joint density over all possible \(n\).</p>
+          </div>
+          <div class="step">
+            \[
+              P(N=n)f_{X|N=n}(x)
+              =
+              \binom{n+r-1}{n}(1-p)^rp^n
+              \frac{\beta^{r+n}}{\Gamma(r+n)}x^{r+n-1}e^{-\beta x}.
+            \]
+            <p>We multiply the Pascal probability by the conditional gamma density.</p>
+          </div>
+          <div class="step">
+            \[
+              \binom{n+r-1}{n}=\frac{\Gamma(r+n)}{\Gamma(r)n!}.
+            \]
+            <p>This gamma-function identity rewrites the binomial coefficient.</p>
+          </div>
+          <div class="step">
+            \[
+              P(N=n)f_{X|N=n}(x)
+              =
+              \frac{(1-p)^r\beta^r}{\Gamma(r)}
+              x^{r-1}e^{-\beta x}
+              \frac{(p\beta x)^n}{n!}.
+            \]
+            <p>The \(\Gamma(r+n)\) factors cancel, and the \(n\)-dependent part becomes a power series term.</p>
+          </div>
+          <div class="step">
+            \[
+              f_X(x)=
+              \frac{(1-p)^r\beta^r}{\Gamma(r)}
+              x^{r-1}e^{-\beta x}
+              \sum_{n=0}^{\infty}\frac{(p\beta x)^n}{n!}.
+            \]
+            <p>We factor out everything that does not depend on \(n\).</p>
+          </div>
+          <div class="step">
+            \[
+              \sum_{n=0}^{\infty}\frac{(p\beta x)^n}{n!}=e^{p\beta x}.
+            \]
+            <p>This is the exponential series.</p>
+          </div>
+          <div class="step">
+            \[
+              f_X(x)=
+              \frac{(\beta(1-p))^r}{\Gamma(r)}
+              x^{r-1}e^{-\beta(1-p)x},\qquad x>0.
+            \]
+            <p>The exponential simplifies because \(e^{-\beta x}e^{p\beta x}=e^{-\beta(1-p)x}\).</p>
+          </div>
+          <div class="step">
+            \[
+              X\sim\Gamma(r,\beta(1-p)).
+            \]
+            <p>This is a gamma density with shape \(r\) and rate \(\beta(1-p)\).</p>
+          </div>
+          <div class="check">
+            <p><span class="label">PDF check.</span> This matches the printed answer.</p>
+          </div>
+        </div>
+
+        <div class="part">
+          <h4>(b) Conditional distribution of \(N\) given \(X=x\)</h4>
+          <div class="step">
+            \[
+              P(N=n|X=x)=\frac{P(N=n)f_{X|N=n}(x)}{f_X(x)}.
+            \]
+            <p>This is Bayes' formula for a discrete-continuous pair.</p>
+          </div>
+          <div class="step">
+            \[
+              P(N=n|X=x)
+              =
+              \frac{
+              \frac{(1-p)^r\beta^r}{\Gamma(r)}x^{r-1}e^{-\beta x}\frac{(p\beta x)^n}{n!}
+              }{
+              \frac{(1-p)^r\beta^r}{\Gamma(r)}x^{r-1}e^{-\beta(1-p)x}
+              }.
+            \]
+            <p>We substitute the numerator from part (a) and the marginal density.</p>
+          </div>
+          <div class="step">
+            \[
+              P(N=n|X=x)=e^{-p\beta x}\frac{(p\beta x)^n}{n!}.
+            \]
+            <p>The constants cancel, and the exponential becomes \(e^{-\beta x+\beta(1-p)x}=e^{-p\beta x}\).</p>
+          </div>
+          <div class="step">
+            \[
+              N|(X=x)\sim\operatorname{Poisson}(p\beta x).
+            \]
+            <p>This is exactly the Poisson mass function with mean \(p\beta x\).</p>
+          </div>
+          <div class="check">
+            <p><span class="label">PDF check.</span> This matches the printed answer.</p>
+          </div>
+        </div>
+
+        <div class="part">
+          <h4>(c) Conditional expectations</h4>
+          <div class="step">
+            \[
+              N|(X=x)\sim\operatorname{Poisson}(p\beta x).
+            \]
+            <p>A Poisson random variable has mean equal to its parameter.</p>
+          </div>
+          <div class="step">
+            \[
+              E[N|X=x]=p\beta x,
+              \qquad
+              E[N|X]=p\beta X.
+            \]
+            <p>We replace the fixed \(x\) by the random variable \(X\).</p>
+          </div>
+          <div class="step">
+            \[
+              X|(N=n)\sim\Gamma(r+n,\beta).
+            \]
+            <p>This is given in the question.</p>
+          </div>
+          <div class="step">
+            \[
+              E[X|N=n]=\frac{r+n}{\beta}.
+            \]
+            <p>A gamma variable with shape \(k\) and rate \(\beta\) has mean \(k/\beta\).</p>
+          </div>
+          <div class="step">
+            \[
+              E[X|N]=\frac{r+N}{\beta}.
+            \]
+            <p>We replace \(n\) by the random variable \(N\).</p>
+          </div>
+          <div class="check">
+            <p><span class="label">PDF check.</span> This matches the printed answer.</p>
+          </div>
+        </div>
+
+        <div class="part">
+          <h4>(d) \(E[N]\), \(E[X]\), and \(\operatorname{Cov}(N,X)\)</h4>
+          <div class="step">
+            \[
+              X\sim\Gamma(r,\beta(1-p)).
+            \]
+            <p>We use the marginal distribution found in part (a).</p>
+          </div>
+          <div class="step">
+            \[
+              E[X]=\frac{r}{\beta(1-p)}.
+            \]
+            <p>A gamma variable with shape \(r\) and rate \(\beta(1-p)\) has mean \(r/[\beta(1-p)]\).</p>
+          </div>
+          <div class="step">
+            \[
+              E[N]=E[E[N|X]]=E[p\beta X]=p\beta E[X].
+            \]
+            <p>This is the law of total expectation.</p>
+          </div>
+          <div class="step">
+            \[
+              E[N]=p\beta\cdot\frac{r}{\beta(1-p)}
+              =\frac{rp}{1-p}.
+            \]
+            <p>The \(\beta\) factors cancel.</p>
+          </div>
+          <div class="step">
+            \[
+              \operatorname{Cov}(N,X)=\operatorname{Cov}(N,E[X|N]).
+            \]
+            <p>This identity holds because the remaining conditional noise in \(X\) has zero covariance with any function of \(N\).</p>
+          </div>
+          <div class="step">
+            \[
+              E[X|N]=\frac{r+N}{\beta}.
+            \]
+            <p>We substitute the conditional expectation from part (c).</p>
+          </div>
+          <div class="step">
+            \[
+              \operatorname{Cov}(N,X)=\operatorname{Cov}\left(N,\frac{r+N}{\beta}\right)
+              =\frac1\beta\operatorname{Cov}(N,N)
+              =\frac{\operatorname{Var}(N)}{\beta}.
+            \]
+            <p>The constant \(r\) has zero covariance with \(N\).</p>
+          </div>
+          <div class="step">
+            \[
+              \operatorname{Var}(N)=\frac{rp}{(1-p)^2}.
+            \]
+            <p>This is the variance of the Pascal distribution in this parametrization.</p>
+          </div>
+          <div class="step">
+            \[
+              \operatorname{Cov}(N,X)=\frac{rp}{\beta(1-p)^2}.
+            \]
+            <p>We divide the variance of \(N\) by \(\beta\).</p>
+          </div>
+          <div class="mistakes">
+            <p><span class="label">Common mistakes.</span> Do not confuse this Pascal distribution, supported on \(0,1,2,\ldots\), with the geometric distribution supported on \(1,2,\ldots\). The means differ by a shift.</p>
+          </div>
+          <div class="check">
+            <p><span class="label">PDF check.</span> This matches the printed answer.</p>
+          </div>
+        </div>
+      </article>
+
+      <article id="p202605-q2" class="question">
+        <h3>Question 2</h3>
+        <div class="question-text">
+          <p><span class="label">Complete question.</span> Let \(T>0\), \(a>0\), and \(W_t\) be Brownian motion. Define</p>
+          \[
+            Z_t=\frac{a+T-t+W_t^2}{a+T},\qquad 0\le t\le T.
+          \]
+          <ol>
+            <li>Show that \(Z_t\) is a strictly positive martingale with \(Z_0=1\).</li>
+            <li>Let \(Q\) be defined by \(dQ/dP=Z_T\). Find a Brownian motion under \(Q\).</li>
+            <li>Find the dynamics of \(W\) under \(Q\).</li>
+            <li>Compute \(E^Q[W_T^2]\).</li>
+          </ol>
+        </div>
+        <div class="topic">
+          <p><span class="label">Topic and purpose.</span> This tests using Ito's formula to build a martingale density and then applying Girsanov's theorem.</p>
+        </div>
+
+        <div class="part">
+          <h4>(a) Strict positivity and martingale property</h4>
+          <div class="step">
+            \[
+              a+T-t+W_t^2\ge a>0,\qquad 0\le t\le T.
+            \]
+            <p>Since \(a>0\), the numerator is always positive.</p>
+          </div>
+          <div class="step">
+            \[
+              Z_t>0,\qquad Z_0=\frac{a+T+0}{a+T}=1.
+            \]
+            <p>This proves strict positivity and the initial value.</p>
+          </div>
+          <div class="step">
+            \[
+              d(W_t^2)=2W_t\,dW_t+dt.
+            \]
+            <p>This is Ito's formula for the square of Brownian motion.</p>
+          </div>
+          <div class="step">
+            \[
+              d(a+T-t+W_t^2)=-dt+(2W_t\,dW_t+dt)=2W_t\,dW_t.
+            \]
+            <p>The \(-dt\) and \(+dt\) cancel.</p>
+          </div>
+          <div class="step">
+            \[
+              dZ_t=\frac{2W_t}{a+T}\,dW_t.
+            \]
+            <p>The denominator \(a+T\) is constant.</p>
+          </div>
+          <div class="step">
+            \[
+              E\left[\int_0^T\left(\frac{2W_t}{a+T}\right)^2dt\right]
+              =\frac{4}{(a+T)^2}\int_0^T E[W_t^2]dt
+              =\frac{4}{(a+T)^2}\int_0^T t\,dt<\infty.
+            \]
+            <p>This square-integrability check means the stochastic integral is a true martingale.</p>
+          </div>
+          <div class="step">
+            \[
+              Z_t\text{ is a strictly positive martingale.}
+            \]
+            <p>It starts at \(1\) and has only a Brownian integral term with enough integrability.</p>
+          </div>
+          <div class="check">
+            <p><span class="label">PDF check.</span> This matches the printed answer.</p>
+          </div>
+        </div>
+
+        <div class="part">
+          <h4>(b) Brownian motion under \(Q\)</h4>
+          <div class="step">
+            \[
+              dZ_t=\frac{2W_t}{a+T}\,dW_t.
+            \]
+            <p>To use Girsanov, we rewrite this as \(dZ_t=Z_t\theta_t\,dW_t\).</p>
+          </div>
+          <div class="step">
+            \[
+              Z_t=\frac{a+T-t+W_t^2}{a+T}.
+            \]
+            <p>We divide the coefficient of \(dW_t\) by \(Z_t\).</p>
+          </div>
+          <div class="step">
+            \[
+              \theta_t=\frac{2W_t/(a+T)}{(a+T-t+W_t^2)/(a+T)}
+              =\frac{2W_t}{a+T-t+W_t^2}.
+            \]
+            <p>The denominator \(a+T\) cancels.</p>
+          </div>
+          <div class="step">
+            \[
+              \widetilde W_t=W_t-\int_0^t\frac{2W_s}{a+T-s+W_s^2}\,ds.
+            \]
+            <p>By Girsanov's theorem, this process is Brownian motion under \(Q\).</p>
+          </div>
+          <div class="check">
+            <p><span class="label">PDF check.</span> This matches the printed answer.</p>
+          </div>
+        </div>
+
+        <div class="part">
+          <h4>(c) Dynamics of \(W\) under \(Q\)</h4>
+          <div class="step">
+            \[
+              d\widetilde W_t=dW_t-\frac{2W_t}{a+T-t+W_t^2}dt.
+            \]
+            <p>This is the differential version of part (b).</p>
+          </div>
+          <div class="step">
+            \[
+              dW_t=\frac{2W_t}{a+T-t+W_t^2}dt+d\widetilde W_t.
+            \]
+            <p>We solve for \(dW_t\).</p>
+          </div>
+          <div class="step">
+            \[
+              W_0=0.
+            \]
+            <p>Brownian motion starts from zero.</p>
+          </div>
+          <div class="check">
+            <p><span class="label">PDF check.</span> This matches the printed dynamics.</p>
+          </div>
+        </div>
+
+        <div class="part">
+          <h4>(d) Compute \(E^Q[W_T^2]\)</h4>
+          <div class="step">
+            \[
+              E^Q[W_T^2]=E^P[Z_TW_T^2].
+            \]
+            <p>This is the definition of the measure \(Q\): expectation under \(Q\) equals expectation under \(P\) weighted by \(Z_T\).</p>
+          </div>
+          <div class="step">
+            \[
+              Z_T=\frac{a+W_T^2}{a+T}.
+            \]
+            <p>At time \(T\), the term \(T-T\) is zero.</p>
+          </div>
+          <div class="step">
+            \[
+              E^Q[W_T^2]=\frac{1}{a+T}E^P[(a+W_T^2)W_T^2].
+            \]
+            <p>We substitute \(Z_T\).</p>
+          </div>
+          <div class="step">
+            \[
+              E^P[(a+W_T^2)W_T^2]=aE[W_T^2]+E[W_T^4].
+            \]
+            <p>We expand the product.</p>
+          </div>
+          <div class="step">
+            \[
+              W_T\sim N(0,T),\qquad E[W_T^2]=T,\qquad E[W_T^4]=3T^2.
+            \]
+            <p>These are the second and fourth moments of a centered normal variable with variance \(T\).</p>
+          </div>
+          <div class="step">
+            \[
+              E^Q[W_T^2]=\frac{aT+3T^2}{a+T}.
+            \]
+            <p>We substitute the normal moments.</p>
+          </div>
+          <div class="mistakes">
+            <p><span class="label">Common mistakes.</span> Do not use \(E^Q[W_T^2]=T\). Under \(Q\), \(W\) is no longer a standard Brownian motion; \(\widetilde W\) is.</p>
+          </div>
+          <div class="check">
+            <p><span class="label">PDF check.</span> This matches the printed answer.</p>
+          </div>
+        </div>
+      </article>
+
+      <article id="p202605-q3" class="question">
+        <h3>Question 3</h3>
+        <div class="question-text">
+          <p><span class="label">Complete question.</span> Let \(a\in\mathbb R\), \(c>0\), \(\sigma>0\), \(x>0\), and let \(X_t>0\) satisfy</p>
+          \[
+            dX_t=\left(aX_t+\frac{c}{X_t}\right)dt+\sigma X_t\,dW_t,\qquad X_0=x.
+          \]
+          <ol>
+            <li>Let \(Y_t=X_t^2\). Show that \(Y_t\) satisfies a linear SDE.</li>
+            <li>Solve this linear SDE explicitly and hence give \(X_t\).</li>
+            <li>Compute \(E[X_t^2]\).</li>
+            <li>If \(a<-\sigma^2/2\), find \(\lim_{t\to\infty}E[X_t^2]\).</li>
+          </ol>
+        </div>
+        <div class="topic">
+          <p><span class="label">Topic and purpose.</span> This tests using a transformation to turn a nonlinear SDE into a linear SDE, solving linear SDEs, and computing moments.</p>
+        </div>
+
+        <div class="part">
+          <h4>(a) SDE for \(Y_t=X_t^2\)</h4>
+          <div class="step">
+            \[
+              Y_t=X_t^2.
+            \]
+            <p>We square \(X_t\) because the term \(c/X_t\) becomes simpler after multiplying by \(X_t\).</p>
+          </div>
+          <div class="step">
+            \[
+              dY_t=2X_t\,dX_t+(dX_t)^2.
+            \]
+            <p>This is Ito's formula for the square function.</p>
+          </div>
+          <div class="step">
+            \[
+              2X_t\,dX_t
+              =2X_t\left(aX_t+\frac{c}{X_t}\right)dt+2\sigma X_t^2dW_t
+              =(2aX_t^2+2c)dt+2\sigma X_t^2dW_t.
+            \]
+            <p>The \(X_t\) cancels in \(2X_t\cdot c/X_t\).</p>
+          </div>
+          <div class="step">
+            \[
+              (dX_t)^2=(\sigma X_t\,dW_t)^2=\sigma^2X_t^2dt.
+            \]
+            <p>Only the Brownian part contributes to the square.</p>
+          </div>
+          <div class="step">
+            \[
+              dY_t=\left(2c+(2a+\sigma^2)X_t^2\right)dt+2\sigma X_t^2dW_t.
+            \]
+            <p>We combine the drift terms.</p>
+          </div>
+          <div class="step">
+            \[
+              dY_t=\left(2c+(2a+\sigma^2)Y_t\right)dt+2\sigma Y_t\,dW_t,\qquad Y_0=x^2.
+            \]
+            <p>Since \(Y_t=X_t^2\), the equation is linear in \(Y_t\).</p>
+          </div>
+          <div class="check">
+            <p><span class="label">PDF check.</span> This matches the printed SDE.</p>
+          </div>
+        </div>
+
+        <div class="part">
+          <h4>(b) Explicit solution</h4>
+          <div class="step">
+            \[
+              dY_t=\left(2c+kY_t\right)dt+2\sigma Y_t\,dW_t,\qquad k=2a+\sigma^2.
+            \]
+            <p>We name \(k\) for readability.</p>
+          </div>
+          <div class="step">
+            \[
+              \Phi_t=\exp((2a-\sigma^2)t+2\sigma W_t).
+            \]
+            <p>This is the solution of the homogeneous SDE \(d\Phi_t=k\Phi_tdt+2\sigma\Phi_tdW_t\).</p>
+          </div>
+          <div class="step">
+            \[
+              d\Phi_t=(2a+\sigma^2)\Phi_tdt+2\sigma\Phi_tdW_t.
+            \]
+            <p>Ito's formula adds \(\frac12(2\sigma)^2dt=2\sigma^2dt\) to the exponent drift \(2a-\sigma^2\), giving \(2a+\sigma^2\).</p>
+          </div>
+          <div class="step">
+            \[
+              Y_t=\Phi_t\left(x^2+2c\int_0^t\Phi_s^{-1}\,ds\right).
+            \]
+            <p>This is variation of constants: the nonhomogeneous drift \(2c\) is accumulated through the inverse homogeneous solution.</p>
+          </div>
+          <div class="step">
+            \[
+              X_t=\sqrt{Y_t}
+              =
+              \left[\Phi_t\left(x^2+2c\int_0^t\Phi_s^{-1}\,ds\right)\right]^{1/2}.
+            \]
+            <p>Since the question says \(X_t\) is positive, we take the positive square root.</p>
+          </div>
+          <div class="check">
+            <p><span class="label">PDF check.</span> This matches the printed solution.</p>
+          </div>
+        </div>
+
+        <div class="part">
+          <h4>(c) Compute \(E[X_t^2]\)</h4>
+          <div class="step">
+            \[
+              E[X_t^2]=E[Y_t].
+            \]
+            <p>By definition, \(Y_t=X_t^2\).</p>
+          </div>
+          <div class="step">
+            \[
+              dY_t=\left(2c+(2a+\sigma^2)Y_t\right)dt+2\sigma Y_t\,dW_t.
+            \]
+            <p>We use the SDE from part (a).</p>
+          </div>
+          <div class="step">
+            \[
+              \frac{d}{dt}E[Y_t]=2c+(2a+\sigma^2)E[Y_t].
+            \]
+            <p>The stochastic integral has mean zero.</p>
+          </div>
+          <div class="step">
+            \[
+              m(t)=E[Y_t],\qquad m(0)=x^2,\qquad m'(t)=2c+km(t),
+            \]
+            <p>Here \(k=2a+\sigma^2\).</p>
+          </div>
+          <div class="step">
+            <p><span class="label">If \(k\ne0\).</span></p>
+            \[
+              m(t)=x^2e^{kt}+\frac{2c}{k}(e^{kt}-1).
+            \]
+            <p>This is the standard solution of a first-order linear ODE with constant forcing.</p>
+          </div>
+          <div class="step">
+            <p><span class="label">If \(k=0\).</span></p>
+            \[
+              m'(t)=2c,\qquad m(t)=x^2+2ct.
+            \]
+            <p>When the linear coefficient is zero, the ODE is just a constant slope.</p>
+          </div>
+          <div class="step">
+            \[
+              E[X_t^2]=
+              \begin{cases}
+              x^2e^{(2a+\sigma^2)t}+\dfrac{2c}{2a+\sigma^2}\left(e^{(2a+\sigma^2)t}-1\right), & 2a+\sigma^2\ne0,\\[6pt]
+              x^2+2ct, & 2a+\sigma^2=0.
+              \end{cases}
+            \]
+            <p>We return to \(2a+\sigma^2\) instead of \(k\).</p>
+          </div>
+          <div class="check">
+            <p><span class="label">PDF check.</span> This matches the printed answer.</p>
+          </div>
+        </div>
+
+        <div class="part">
+          <h4>(d) Limit when \(a<-\sigma^2/2\)</h4>
+          <div class="step">
+            \[
+              a<-\frac12\sigma^2
+              \quad\Longrightarrow\quad
+              2a+\sigma^2<0.
+            \]
+            <p>The exponent coefficient is negative.</p>
+          </div>
+          <div class="step">
+            \[
+              \lim_{t\to\infty}e^{(2a+\sigma^2)t}=0.
+            \]
+            <p>An exponential with a negative exponent coefficient decays to zero.</p>
+          </div>
+          <div class="step">
+            \[
+              E[X_t^2]
+              =x^2e^{kt}+\frac{2c}{k}(e^{kt}-1),\qquad k=2a+\sigma^2<0.
+            \]
+            <p>We use the formula from part (c).</p>
+          </div>
+          <div class="step">
+            \[
+              \lim_{t\to\infty}E[X_t^2]
+              =0+\frac{2c}{k}(0-1)
+              =-\frac{2c}{k}
+              =-\frac{2c}{2a+\sigma^2}.
+            \]
+            <p>The denominator is negative, so the final limit is positive, as a second moment should be.</p>
+          </div>
+          <div class="mistakes">
+            <p><span class="label">Common mistakes.</span> Do not take the negative square root in part (b). The problem states \(X_t>0\), so \(X_t=\sqrt{Y_t}\).</p>
+          </div>
+          <div class="check">
+            <p><span class="label">PDF check.</span> This matches the printed answer.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="summary">
+      <h2>Common Exam Mistakes Across These Papers</h2>
+      <ul>
+        <li>For ratio distributions, forgetting that different regions require different formulas.</li>
+        <li>Dropping the Jacobian factor in a density transformation.</li>
+        <li>Using the physical drift instead of the risk-neutral drift when pricing.</li>
+        <li>Forgetting initial values such as \(Z_0=x/y\) in geometric Brownian motion expectations.</li>
+        <li>Missing the Ito correction term \(\frac12 f''(X_t)(dX_t)^2\).</li>
+        <li>Thinking \(W\) is still Brownian after a measure change; the shifted process is Brownian.</li>
+        <li>Squaring a random payoff by squaring its mean and forgetting its variance.</li>
+      </ul>
+    </section>
+
+    <section id="formulae" class="summary formula-page">
+      <h2>Formulae Used</h2>
+      <ul class="formula-list">
+        <li>Uniform area rule: for uniform \((X,Y)\) on \([0,1]^2\), probability equals area.</li>
+        <li>CDF to density: \(f_Z(z)=F_Z'(z)\).</li>
+        <li>Change of variables: \(f_Y(y)=f_X(g^{-1}(y))\left|\frac{d}{dy}g^{-1}(y)\right|\).</li>
+        <li>Normal exponential moment: if \(W_t\sim N(0,t)\), \(E[e^{uW_t}]=e^{u^2t/2}\).</li>
+        <li>Brownian exponential martingale: \(e^{\theta W_t-\theta^2t/2}\).</li>
+        <li>Girsanov: if \(dQ/dP=\mathcal E(\int\theta_t\,dW_t)\), then \(\widetilde W_t=W_t-\int_0^t\theta_sds\) is Brownian under \(Q\).</li>
+        <li>Ito rules: \((dW_t)^2=dt\), \(dt\,dW_t=0\), and \((dt)^2=0\).</li>
+        <li>Ito formula: \(df(X_t)=f'(X_t)dX_t+\frac12f''(X_t)d\langle X\rangle_t\).</li>
+        <li>Quadratic covariation with correlation: \(dW_t^XdW_t^Y=\rho\,dt\).</li>
+        <li>Risk-neutral pricing: \(\text{price}=e^{-rT}E^Q[\text{payoff}]\).</li>
+        <li>Geometric Brownian mean: if \(dG_t/G_t=\alpha dt+\text{Brownian terms}\), then \(E[G_T]=G_0e^{\alpha T}\).</li>
+        <li>Beta integral: \(\int_0^1x^{u-1}(1-x)^{v-1}dx=\Gamma(u)\Gamma(v)/\Gamma(u+v)\).</li>
+        <li>Gamma recursion: \(\Gamma(q+1)=q\Gamma(q)\).</li>
+        <li>Beta mean: \(E[X]=\alpha/(\alpha+\beta)\).</li>
+        <li>Beta variance: \(\operatorname{Var}(X)=\alpha\beta/[(\alpha+\beta)^2(\alpha+\beta+1)]\).</li>
+        <li>Generator of \(dX_t=b(X_t)dt+\sqrt{a(X_t)}dW_t\): \(\mathcal Lf=b f'+\frac12a f''\).</li>
+        <li>Gamma density with shape \(k\), rate \(\lambda\): \(f(x)=\lambda^kx^{k-1}e^{-\lambda x}/\Gamma(k)\).</li>
+        <li>Gamma mean: \(k/\lambda\). Gamma variance: \(k/\lambda^2\).</li>
+        <li>Poisson mass: \(P(N=n)=e^{-m}m^n/n!\). Poisson mean: \(m\).</li>
+        <li>Pascal mean and variance here: \(E[N]=rp/(1-p)\), \(\operatorname{Var}(N)=rp/(1-p)^2\).</li>
+        <li>Law of total expectation: \(E[X]=E[E[X|Y]]\).</li>
+        <li>Covariance by conditioning: \(\operatorname{Cov}(N,X)=\operatorname{Cov}(N,E[X|N])\) when conditional noise has zero covariance with \(N\).</li>
+        <li>Ito isometry: \(E[(\int_0^T H_s\,dW_s)^2]=E[\int_0^T H_s^2ds]\).</li>
+        <li>Linear ODE \(m'=A+km\): if \(k\ne0\), \(m(t)=m(0)e^{kt}+\frac Ak(e^{kt}-1)\).</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
