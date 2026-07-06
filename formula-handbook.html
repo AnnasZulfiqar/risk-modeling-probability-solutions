@@ -1,0 +1,1184 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Risk Modeling and Probability - Complete Formula Handbook</title>
+<style>
+:root{--bg:#f5f7f8;--paper:#fff;--ink:#172027;--muted:#5b6873;--line:#d9e0e5;--accent:#0b6f6a;--accent-2:#8f4a23;--soft:#edf6f5;--warn:#fff5e8;--code:#25313b}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.58;letter-spacing:0}header{background:#10252c;color:#fff;padding:32px 18px 24px;border-bottom:6px solid var(--accent)}header .wrap,main,footer{width:min(1120px,calc(100% - 36px));margin:0 auto}h1,h2,h3,h4{line-height:1.22;margin:0;letter-spacing:0}h1{font-size:2rem;max-width:960px}header p{margin:12px 0 0;color:#d8e5e8;max-width:960px}nav{margin-top:20px;display:flex;flex-wrap:wrap;gap:8px}nav a{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.28);border-radius:6px;padding:7px 10px;font-size:.9rem}main{padding:28px 0 50px}section,article.formula-card{background:var(--paper);border:1px solid var(--line);border-radius:8px}section{margin:22px 0;padding:24px}section>h2{font-size:1.55rem;padding-bottom:10px;border-bottom:2px solid var(--line)}.note{background:var(--soft);border-left:4px solid var(--accent);padding:12px 14px;border-radius:6px;margin:12px 0}.topic-title{margin-top:26px;color:var(--accent);font-size:1.35rem}.index-list,.priority-list{columns:2 300px}.index-list li,.priority-list li{break-inside:avoid;margin-bottom:5px}.formula-card{margin:16px 0 22px;padding:18px;break-inside:avoid}.formula-card h3{font-size:1.22rem;color:var(--accent);margin-bottom:10px}.badge{display:inline-block;font-size:.76rem;font-weight:700;color:#fff;background:var(--accent-2);padding:3px 7px;border-radius:999px;margin-left:8px;vertical-align:middle}.field{margin:10px 0;padding-top:8px;border-top:1px solid var(--line)}.field h4{color:var(--accent-2);font-size:.98rem;margin-bottom:3px}.field p{margin:0;color:var(--muted)}.math{overflow-x:auto;padding:12px 10px;border:1px solid var(--line);background:#fbfcfd;border-radius:6px;margin:10px 0}.cheat-topic{margin-top:18px;break-inside:avoid}.cheat-topic h3{color:var(--accent);font-size:1.1rem;margin-bottom:8px}.cheat-list{columns:2 330px;column-gap:30px}.cheat-list li{break-inside:avoid;margin-bottom:8px}table{width:100%;border-collapse:collapse;margin-top:12px;font-size:.95rem}th,td{border:1px solid var(--line);padding:8px 9px;vertical-align:top}th{background:var(--soft);text-align:left;color:var(--code)}.quick-sheet{break-before:page;page-break-before:always}.quick-table{font-size:.7rem;line-height:1.23}.quick-table th,.quick-table td{padding:4px 5px}.quick-table mjx-container{font-size:80%!important}.comparison td:first-child{width:23%;font-weight:700;color:var(--code)}mjx-container{max-width:100%;overflow-x:auto;overflow-y:hidden;padding-bottom:2px}footer{color:var(--muted);padding:0 0 36px}@media(max-width:640px){header{padding:24px 0 20px}header .wrap,main,footer{width:min(100% - 24px,1120px)}h1{font-size:1.55rem}section{padding:16px}.formula-card{padding:14px}}@media print{body{background:#fff;font-size:10.5pt}header{color:#000;background:#fff;border-bottom:2px solid #000}header p,nav a{color:#000}nav{display:none}main,header .wrap,footer{width:100%}section{border:0;padding-left:0;padding-right:0}article.formula-card{border-color:#cfd6dc;border-radius:0}.quick-sheet{break-before:page;page-break-before:always}}
+</style>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],processEscapes:true},chtml:{scale:1}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head><body><header><div class="wrap"><h1>Risk Modeling and Probability - Complete Formula Handbook</h1>
+<p>A beginner-friendly formula reference for the supplied past papers and similar unseen exam questions. Each formula includes what it means, when to use it, how to recognize it, symbol meanings, assumptions, related formulas, and common mistakes.</p>
+<nav aria-label="Page navigation"><a href="#topic-index">Formula Index</a><a href="#all-formulas">All Formula Details</a><a href="#complete-cheat-sheet">Complete Cheat Sheet</a><a href="#quick-revision">Quick Revision</a><a href="#selection-guide">Selection Guide</a><a href="#formula-comparison">Formula Comparison</a><a href="#high-priority">High Priority</a><a href="index.html">Solved Papers</a><a href="new-exam-solutions.html">New Exams</a></nav></div></header><main>
+<section id="intro"><h2>How to Use This Handbook</h2><div class="note"><p><strong>Read formulas by topic first.</strong> For revision, start with the high-priority list, then use the selection guide to decide which formula matches a question. This handbook does not include worked examples; it is designed as a reference for solving past and unseen exam questions.</p><p><strong>Course scope.</strong> The handbook covers transformations, distributions, conditioning, mixtures, Brownian motion, Ito calculus, Girsanov theorem, risk-neutral pricing, geometric Brownian motion, ratio pricing, and SDE solution methods.</p></div></section>
+<section id="topic-index"><h2>3. Topic-wise Formula Index</h2>
+<h3 class="topic-title">Basic Probability and Moments</h3><ul class="index-list">
+<li><a href="#density-normalization">Density Normalization</a></li>
+<li><a href="#cdf-and-density-relationship">CDF and Density Relationship</a></li>
+<li><a href="#expectation-integral">Expectation Integral</a></li>
+<li><a href="#variance-identity">Variance Identity</a></li>
+<li><a href="#covariance-identity">Covariance Identity</a></li>
+<li><a href="#moment-generating-function">Moment Generating Function</a></li>
+</ul>
+<h3 class="topic-title">Transformations and Change of Variables</h3><ul class="index-list">
+<li><a href="#uniform-area-rule">Uniform Area Rule</a></li>
+<li><a href="#one-to-one-density-transformation">One-to-One Density Transformation</a></li>
+<li><a href="#many-to-one-density-transformation">Many-to-One Density Transformation</a></li>
+<li><a href="#two-dimensional-jacobian-formula">Two-Dimensional Jacobian Formula</a></li>
+<li><a href="#ratio-density-formula">Ratio Density Formula</a></li>
+</ul>
+<h3 class="topic-title">Normal and Lognormal Formulas</h3><ul class="index-list">
+<li><a href="#normal-density">Normal Density</a></li>
+<li><a href="#normal-standardization">Normal Standardization</a></li>
+<li><a href="#normal-exponential-moment">Normal Exponential Moment</a></li>
+<li><a href="#normal-fourth-moment">Normal Fourth Moment</a></li>
+<li><a href="#lognormal-moment">Lognormal Moment</a></li>
+</ul>
+<h3 class="topic-title">Gamma, Beta, and Discrete Distributions</h3><ul class="index-list">
+<li><a href="#gamma-density">Gamma Density</a></li>
+<li><a href="#gamma-mean-variance-and-mgf">Gamma Mean, Variance, and MGF</a></li>
+<li><a href="#gamma-moment-formula">Gamma Moment Formula</a></li>
+<li><a href="#gamma-sum-rule">Gamma Sum Rule</a></li>
+<li><a href="#gamma-function-recursion">Gamma Function Recursion</a></li>
+<li><a href="#beta-integral">Beta Integral</a></li>
+<li><a href="#beta-density">Beta Density</a></li>
+<li><a href="#beta-mean-and-variance">Beta Mean and Variance</a></li>
+<li><a href="#beta-gamma-relationship">Beta-Gamma Relationship</a></li>
+<li><a href="#exponential-distribution">Exponential Distribution</a></li>
+<li><a href="#geometric-distribution-on-1-2">Geometric Distribution on 1,2,...</a></li>
+<li><a href="#pascal-distribution-on-0-1">Pascal Distribution on 0,1,...</a></li>
+<li><a href="#poisson-distribution">Poisson Distribution</a></li>
+<li><a href="#exponential-series">Exponential Series</a></li>
+</ul>
+<h3 class="topic-title">Conditioning and Mixtures</h3><ul class="index-list">
+<li><a href="#discrete-continuous-joint-law">Discrete-Continuous Joint Law</a></li>
+<li><a href="#marginal-mixture-density">Marginal Mixture Density</a></li>
+<li><a href="#bayes-formula-for-mixed-variables">Bayes Formula for Mixed Variables</a></li>
+<li><a href="#law-of-total-expectation">Law of Total Expectation</a></li>
+<li><a href="#law-of-total-variance">Law of Total Variance</a></li>
+<li><a href="#covariance-by-conditioning">Covariance by Conditioning</a></li>
+</ul>
+<h3 class="topic-title">Brownian Motion and Ito Calculus</h3><ul class="index-list">
+<li><a href="#brownian-fixed-time-distribution">Brownian Fixed-Time Distribution</a></li>
+<li><a href="#ito-multiplication-table">Ito Multiplication Table</a></li>
+<li><a href="#quadratic-covariation-with-correlation">Quadratic Covariation with Correlation</a></li>
+<li><a href="#stochastic-integral-mean-zero">Stochastic Integral Mean Zero</a></li>
+<li><a href="#ito-isometry">Ito Isometry</a></li>
+<li><a href="#ito-formula-time-dependent">Ito Formula, Time-Dependent</a></li>
+<li><a href="#ito-formula-one-variable">Ito Formula, One Variable</a></li>
+<li><a href="#ito-product-rule">Ito Product Rule</a></li>
+<li><a href="#logarithm-rule-for-gbm">Logarithm Rule for GBM</a></li>
+<li><a href="#brownian-exponential-martingale">Brownian Exponential Martingale</a></li>
+<li><a href="#diffusion-generator">Diffusion Generator</a></li>
+<li><a href="#scale-function-equation">Scale Function Equation</a></li>
+<li><a href="#scale-function-integral-formula">Scale Function Integral Formula</a></li>
+</ul>
+<h3 class="topic-title">Girsanov and Risk-Neutral Pricing</h3><ul class="index-list">
+<li><a href="#stochastic-exponential-density">Stochastic Exponential Density</a></li>
+<li><a href="#girsanov-theorem">Girsanov Theorem</a></li>
+<li><a href="#constant-theta-girsanov-form">Constant-Theta Girsanov Form</a></li>
+<li><a href="#change-of-measure-expectation">Change of Measure Expectation</a></li>
+<li><a href="#risk-neutral-drift-condition">Risk-Neutral Drift Condition</a></li>
+<li><a href="#risk-neutral-pricing">Risk-Neutral Pricing</a></li>
+<li><a href="#multidimensional-market-price-of-risk">Multidimensional Market Price of Risk</a></li>
+<li><a href="#correlated-brownian-decomposition">Correlated Brownian Decomposition</a></li>
+</ul>
+<h3 class="topic-title">Geometric Brownian Motion and Option Formulas</h3><ul class="index-list">
+<li><a href="#gbm-solution">GBM Solution</a></li>
+<li><a href="#geometric-brownian-mean">Geometric Brownian Mean</a></li>
+<li><a href="#gbm-log-law">GBM Log Law</a></li>
+<li><a href="#ratio-of-correlated-gbms">Ratio of Correlated GBMs</a></li>
+<li><a href="#lognormal-truncated-expectation">Lognormal Truncated Expectation</a></li>
+<li><a href="#call-payoff-formula">Call Payoff Formula</a></li>
+<li><a href="#maximum-payoff-decomposition">Maximum Payoff Decomposition</a></li>
+</ul>
+<h3 class="topic-title">SDE Solution Tools and Special Densities</h3><ul class="index-list">
+<li><a href="#linear-ode-for-expectations">Linear ODE for Expectations</a></li>
+<li><a href="#linear-sde-integrating-factor-pattern">Linear SDE Integrating Factor Pattern</a></li>
+<li><a href="#ornstein-uhlenbeck-solution">Ornstein-Uhlenbeck Solution</a></li>
+<li><a href="#ou-stochastic-integral-variance">OU Stochastic Integral Variance</a></li>
+<li><a href="#square-transformation">Square Transformation</a></li>
+<li><a href="#reciprocal-transformation">Reciprocal Transformation</a></li>
+<li><a href="#brownian-bridge-density-to-zero">Brownian Bridge Density to Zero</a></li>
+<li><a href="#brownian-bridge-drift-to-zero">Brownian Bridge Drift to Zero</a></li>
+<li><a href="#brownian-bridge-density-to-endpoint-a">Brownian Bridge Density to Endpoint a</a></li>
+<li><a href="#brownian-bridge-drift-to-endpoint-a">Brownian Bridge Drift to Endpoint a</a></li>
+</ul>
+</section>
+<section id="all-formulas"><h2>All Formula Details</h2>
+<h3 class="topic-title">Basic Probability and Moments</h3>
+<article id="density-normalization" class="formula-card"><h3>Density Normalization</h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[\int_{\text{support}} f_X(x)\,dx=1,\qquad f_X(x)\ge0\]</div></div>
+<div class="field"><h4>Description:</h4><p>A continuous density must have total area one and cannot be negative.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it to check a density or find an unknown normalizing constant.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when a question gives a proposed density or asks whether a density is valid.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: density, pdf, normalize, find the constant, valid probability density.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(f_X(x)\) is the density of \(X\). The support is the set of values where \(X\) can lie.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>The variable must be continuous, and the integral is only over the support.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>CDF and density relationship; expectation integral.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Integrating over the wrong range or forgetting nonnegativity.</p></div>
+</article>
+<article id="cdf-and-density-relationship" class="formula-card"><h3>CDF and Density Relationship<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[F_X(x)=P(X\le x),\qquad f_X(x)=F_X'(x)\]</div></div>
+<div class="field"><h4>Description:</h4><p>The CDF gives probability up to \(x\); differentiating it gives the density.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it to move between CDFs and densities.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use after finding a probability such as \(P(Y\le y)\).</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: distribution function, cumulative distribution, find the density, CDF method.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(F_X\) is the CDF, \(f_X\) is the density, and \(x\) is a real value.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>The derivative formula applies where the CDF is differentiable.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Uniform area rule; change of variables.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Differentiating outside the support or forgetting piecewise cases.</p></div>
+</article>
+<article id="expectation-integral" class="formula-card"><h3>Expectation Integral<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[E[g(X)]=\int_{\text{support}} g(x)f_X(x)\,dx\]</div></div>
+<div class="field"><h4>Description:</h4><p>This gives the average value of a function of a continuous random variable.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it to calculate means, moments, and expected payoffs.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when the density is known and an expectation is requested.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: expected value, mean, moment, payoff, average.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(g\) is a function of \(X\). \(f_X\) is the density of \(X\).</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>The integral must exist as a finite number.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Variance identity; risk-neutral pricing; MGF.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Using \(g(E[X])\) instead of \(E[g(X)]\).</p></div>
+</article>
+<article id="variance-identity" class="formula-card"><h3>Variance Identity<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[\operatorname{Var}(X)=E[X^2]-(E[X])^2\]</div></div>
+<div class="field"><h4>Description:</h4><p>Variance measures spread around the mean.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it once the first and second moments are known.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when asked for variance and you can compute moments.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: variance, spread, second moment, standard deviation.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(E[X]\) is the mean and \(E[X^2]\) is the second moment.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>Requires finite second moment.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Law of total variance; Ito isometry.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Forgetting the square on \((E[X])^2\).</p></div>
+</article>
+<article id="covariance-identity" class="formula-card"><h3>Covariance Identity</h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[\operatorname{Cov}(X,Y)=E[XY]-E[X]E[Y]\]</div></div>
+<div class="field"><h4>Description:</h4><p>Covariance measures how two random variables move together.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it to calculate dependence and cross terms.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when covariance or correlation appears.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: covariance, correlation, joint movement, cross term.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(X,Y\) are random variables; \(E[XY]\) is their product moment.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>The expectations must be finite.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Quadratic covariation; covariance by conditioning.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Assuming covariance is zero without independence or another reason.</p></div>
+</article>
+<article id="moment-generating-function" class="formula-card"><h3>Moment Generating Function<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[M_X(t)=E[e^{tX}],\qquad E[X^n]=M_X^{(n)}(0)\]</div></div>
+<div class="field"><h4>Description:</h4><p>The MGF packages all moments into one function when it exists near zero.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it to find moments or identify a distribution.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when asked for an MGF or when moments are easiest by differentiating.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: MGF, moment generating, identify distribution.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(t\) is the MGF variable; \(M_X^{(n)}(0)\) is the \(n\)-th derivative at zero.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>The MGF must be finite around \(t=0\).</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Normal MGF; gamma MGF.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Ignoring the allowed range of \(t\).</p></div>
+</article>
+<h3 class="topic-title">Transformations and Change of Variables</h3>
+<article id="uniform-area-rule" class="formula-card"><h3>Uniform Area Rule<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[(X,Y)\sim U([0,1]^2)\quad\Longrightarrow\quad P((X,Y)\in A)=\operatorname{Area}(A)\]</div></div>
+<div class="field"><h4>Description:</h4><p>For a uniform point in the unit square, probability equals geometric area.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it for inequalities involving two independent uniform variables.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when the event is a region in the square.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: independent uniform, unit square, area, region, ratio of uniforms.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(A\) is a region inside \([0,1]^2\).</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>The joint density must be constant on the square.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>CDF method; ratio distribution.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Drawing the wrong region or missing separate cases.</p></div>
+</article>
+<article id="one-to-one-density-transformation" class="formula-card"><h3>One-to-One Density Transformation<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[f_Y(y)=f_X(g^{-1}(y))\left|\frac{d}{dy}g^{-1}(y)\right|\]</div></div>
+<div class="field"><h4>Description:</h4><p>This transforms a density through an invertible function.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it to find the density of \(Y=g(X)\).</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when the transformation has one inverse on the support.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: transformed variable, inverse, density of \(Y\).</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(g^{-1}\) is the inverse transformation; the absolute derivative is the one-dimensional Jacobian.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>\(g\) must be differentiable and one-to-one on the support.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Many-to-one transformation; CDF method.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Forgetting the absolute value or using the derivative in the wrong direction.</p></div>
+</article>
+<article id="many-to-one-density-transformation" class="formula-card"><h3>Many-to-One Density Transformation<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[f_Y(y)=\sum_i \frac{f_X(x_i)}{|g'(x_i)|},\qquad g(x_i)=y\]</div></div>
+<div class="field"><h4>Description:</h4><p>This handles transformations where several inputs produce the same output.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it for squares, absolute values, and other non-invertible transformations.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when \(g(x)=y\) has more than one root.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: square, absolute value, multiple roots, non-monotone transformation.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(x_i\) are all roots in the support; \(g'\) is the derivative of \(g\).</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>Include every valid root and avoid points where \(g'(x_i)=0\) unless handled carefully.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>One-to-one transformation; CDF method.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Forgetting the negative root for a square.</p></div>
+</article>
+<article id="two-dimensional-jacobian-formula" class="formula-card"><h3>Two-Dimensional Jacobian Formula<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[f_{U,V}(u,v)=f_{X,Y}(x(u,v),y(u,v))\left|\frac{\partial(x,y)}{\partial(u,v)}\right|\]</div></div>
+<div class="field"><h4>Description:</h4><p>This changes variables in a joint density.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it for sums, ratios, and beta-gamma transformations.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when two old variables are replaced by two new variables.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: joint density, transformation, Jacobian, sum and ratio.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(x(u,v),y(u,v)\) are inverse transformations; the determinant is the Jacobian.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>The transformation must be one-to-one on the relevant support.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Beta-gamma ratio independence; ratio density.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Using the reciprocal Jacobian or forgetting support restrictions.</p></div>
+</article>
+<article id="ratio-density-formula" class="formula-card"><h3>Ratio Density Formula</h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[Z=Y/X\quad\Longrightarrow\quad f_Z(z)=\int_{-\infty}^{\infty}|x|f_{X,Y}(x,zx)\,dx\]</div></div>
+<div class="field"><h4>Description:</h4><p>This is a direct density formula for a ratio of random variables.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it when a ratio is requested and a joint density is known.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use for \(Y/X\), \(X/Y\), quotient, or fraction distributions.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: ratio, quotient, divided by, fraction of random variables.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(f_{X,Y}\) is the joint density; \(|x|\) is the Jacobian factor.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>The denominator must not be zero with positive probability.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>CDF method; Jacobian formula.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Forgetting the absolute Jacobian factor.</p></div>
+</article>
+<h3 class="topic-title">Normal and Lognormal Formulas</h3>
+<article id="normal-density" class="formula-card"><h3>Normal Density<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[X\sim N(\mu,\sigma^2)\quad\Longrightarrow\quad f_X(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-(x-\mu)^2/(2\sigma^2)}\]</div></div>
+<div class="field"><h4>Description:</h4><p>This is the density of a normal random variable.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it for Gaussian calculations and Brownian fixed-time values.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use whenever a variable is normal or Brownian motion is evaluated at a fixed time.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: normal, Gaussian, \(N(\mu,\sigma^2)\), Brownian at time \(t\).</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(\mu\) is mean; \(\sigma^2\) is variance; \(\sigma\) is standard deviation.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>\(\sigma\gt0\).</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Standardization; normal exponential moment.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Confusing variance and standard deviation.</p></div>
+</article>
+<article id="normal-standardization" class="formula-card"><h3>Normal Standardization<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[P(X\le x)=N\left(\frac{x-\mu}{\sigma}\right),\qquad X\sim N(\mu,\sigma^2)\]</div></div>
+<div class="field"><h4>Description:</h4><p>Standardization converts any normal variable to a standard normal variable.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it to compute normal and lognormal probabilities.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use for events involving a normal or lognormal variable.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: probability, threshold, normal CDF, \(N(\cdot)\).</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(N(\cdot)\) is the standard normal CDF.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>\(\sigma\gt0\).</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Lognormal option formulas; \(d_1,d_2\).</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Dividing by variance instead of standard deviation.</p></div>
+</article>
+<article id="normal-exponential-moment" class="formula-card"><h3>Normal Exponential Moment<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[W_t\sim N(0,t)\quad\Longrightarrow\quad E[e^{uW_t}]=e^{u^2t/2}\]</div></div>
+<div class="field"><h4>Description:</h4><p>This gives the expectation of an exponential of Brownian motion.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it for exponential martingales and lognormal moments.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when the expectation contains \(e^{uW_t}\).</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: exponential of Brownian motion, lognormal, moment.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(u\) is a constant; \(W_t\) is Brownian motion at time \(t\).</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>The variable must be normal with mean 0 and variance \(t\).</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Brownian exponential martingale; lognormal moment.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Writing \(e^{ut/2}\) instead of \(e^{u^2t/2}\).</p></div>
+</article>
+<article id="normal-fourth-moment" class="formula-card"><h3>Normal Fourth Moment</h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[W_T\sim N(0,T)\quad\Longrightarrow\quad E[W_T^2]=T,\\quad E[W_T^4]=3T^2\]</div></div>
+<div class="field"><h4>Description:</h4><p>These are standard Brownian fixed-time moments.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use them for expectations involving \(W_T^2\) and \(W_T^4\).</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when a squared Brownian payoff is weighted by a density.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: fourth moment, \(W_T^2\), \(W_T^4\), quadratic payoff.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(T\) is terminal time.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>Brownian motion starts at 0 under the measure being used.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Gaussian integral; change of measure expectation.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Using \(T^2\) instead of \(3T^2\).</p></div>
+</article>
+<article id="lognormal-moment" class="formula-card"><h3>Lognormal Moment<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[Y=e^X,\ X\sim N(m,v)\quad\Longrightarrow\quad E[Y^q]=e^{qm+q^2v/2}\]</div></div>
+<div class="field"><h4>Description:</h4><p>A lognormal variable is an exponential of a normal variable.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it for moments of geometric Brownian motion.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when \(\log Y\) is normal.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: lognormal, exponential Brownian, moment of \(e^X\).</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(m\) is mean of \(X\), \(v\) is variance, \(q\) is a power.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>\(X\) must be normally distributed.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>GBM solution; normal exponential moment.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Forgetting the variance correction \(q^2v/2\).</p></div>
+</article>
+<h3 class="topic-title">Gamma, Beta, and Discrete Distributions</h3>
+<article id="gamma-density" class="formula-card"><h3>Gamma Density<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[X\sim\Gamma(k,\lambda)\quad\Longrightarrow\quad f_X(x)=\frac{\lambda^k}{\Gamma(k)}x^{k-1}e^{-\lambda x},\quad x\gt0\]</div></div>
+<div class="field"><h4>Description:</h4><p>The gamma distribution has shape \(k\) and rate \(\lambda\).</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it for gamma variables and gamma mixtures.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when the density looks like a power times an exponential.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: gamma, shape, rate, \(x^{k-1}e^{-\lambda x}\).</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(k\gt0\) is shape; \(\lambda\gt0\) is rate.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>Support is \(x\gt0\).</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Gamma MGF; gamma sum; beta-gamma relationship.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Confusing rate \(\lambda\) with scale \(1/\lambda\).</p></div>
+</article>
+<article id="gamma-mean-variance-and-mgf" class="formula-card"><h3>Gamma Mean, Variance, and MGF<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[E[X]=\frac{k}{\lambda},\qquad \operatorname{Var}(X)=\frac{k}{\lambda^2},\qquad M_X(t)=\left(1-\frac{t}{\lambda}\right)^{-k}\]</div></div>
+<div class="field"><h4>Description:</h4><p>These are the main summary formulas for a gamma variable.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use them to calculate moments or identify gamma distributions.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when \(X\sim\Gamma(k,\lambda)\).</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: gamma mean, gamma variance, gamma MGF.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(k\) is shape, \(\lambda\) is rate, \(t\) is MGF variable.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>The MGF needs \(t\lt\lambda\).</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Gamma density; gamma moment formula.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Writing variance as \(k/\lambda\) instead of \(k/\lambda^2\).</p></div>
+</article>
+<article id="gamma-moment-formula" class="formula-card"><h3>Gamma Moment Formula</h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[E[X^m]=\frac{\Gamma(k+m)}{\Gamma(k)\lambda^m},\qquad X\sim\Gamma(k,\lambda)\]</div></div>
+<div class="field"><h4>Description:</h4><p>This gives higher moments of gamma variables.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it for \(E[X^2]\) and other powers.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when asked for powers of a gamma variable.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: gamma moment, second moment, \(E[X^m]\).</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(m\) is the moment order.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>The moment must be finite; positive moments are finite.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Gamma recursion; gamma mean and variance.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Forgetting \(\lambda^m\) in the denominator.</p></div>
+</article>
+<article id="gamma-sum-rule" class="formula-card"><h3>Gamma Sum Rule<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[X\sim\Gamma(a,\lambda),\ Y\sim\Gamma(b,\lambda),\ X\perp Y\quad\Longrightarrow\quad X+Y\sim\Gamma(a+b,\lambda)\]</div></div>
+<div class="field"><h4>Description:</h4><p>Independent gamma variables with the same rate add by adding shapes.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it for sums of same-rate gamma variables.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when independent gamma variables are added.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: independent gamma, same rate, sum.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(a,b\) are shapes; \(\lambda\) is the common rate.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>The rate must be the same.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Beta-gamma relationship; gamma MGF.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Using the rule when rates differ.</p></div>
+</article>
+<article id="gamma-function-recursion" class="formula-card"><h3>Gamma Function Recursion<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[\Gamma(q+1)=q\Gamma(q),\qquad \Gamma(n)=(n-1)!\]</div></div>
+<div class="field"><h4>Description:</h4><p>The gamma function extends factorials.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it to simplify gamma and beta constants.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when expressions contain \(\Gamma(\alpha+1)\), \(\Gamma(n)\), or factorials.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: gamma function, factorial, simplify.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(q\gt0\); \(n\) is a positive integer.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>Arguments used in this course are positive.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Beta integral; gamma density.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Writing \(\Gamma(n)=n!\) instead of \((n-1)!\).</p></div>
+</article>
+<article id="beta-integral" class="formula-card"><h3>Beta Integral<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[\int_0^1x^{u-1}(1-x)^{v-1}\,dx=\frac{\Gamma(u)\Gamma(v)}{\Gamma(u+v)}\]</div></div>
+<div class="field"><h4>Description:</h4><p>This integral normalizes the beta density.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it for beta moments and beta-type integrals.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use for integrals over \([0,1]\) with powers of \(x\) and \(1-x\).</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: beta integral, \(x^{u-1}(1-x)^{v-1}\).</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(u,v\gt0\) are parameters.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>Requires positive parameters and limits 0 to 1.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Beta density; gamma recursion.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Using it on a different interval without a change of variables.</p></div>
+</article>
+<article id="beta-density" class="formula-card"><h3>Beta Density<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[X\sim\operatorname{Beta}(\alpha,\beta)\quad\Longrightarrow\quad f_X(x)=\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}x^{\alpha-1}(1-x)^{\beta-1},\quad0\lt x\lt1\]</div></div>
+<div class="field"><h4>Description:</h4><p>The beta distribution is a distribution on \((0,1)\).</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it for proportions and gamma ratios.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when a variable is between 0 and 1 with powers of \(x\) and \(1-x\).</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: beta, proportion, ratio, \([0,1]\).</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(\alpha,\beta\gt0\) are beta shape parameters.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>Support is \(0\lt x\lt1\).</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Beta mean and variance; beta-gamma relationship.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Using it outside \([0,1]\).</p></div>
+</article>
+<article id="beta-mean-and-variance" class="formula-card"><h3>Beta Mean and Variance<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[E[X]=\frac{\alpha}{\alpha+\beta},\qquad \operatorname{Var}(X)=\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}\]</div></div>
+<div class="field"><h4>Description:</h4><p>These are the main moments of a beta variable.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use them to summarize a beta distribution.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when \(X\sim\operatorname{Beta}(\alpha,\beta)\).</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: beta mean, beta variance.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(\alpha,\beta\) are positive shape parameters.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>Parameters must be positive.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Beta density; beta integral.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Putting \(\beta\) in the numerator of the mean.</p></div>
+</article>
+<article id="beta-gamma-relationship" class="formula-card"><h3>Beta-Gamma Relationship<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[X\sim\Gamma(a,\lambda),\ Y\sim\Gamma(b,\lambda),\ X\perp Y\quad\Longrightarrow\quad \frac{X}{X+Y}\sim\operatorname{Beta}(a,b),\quad X+Y\sim\Gamma(a+b,\lambda)\]</div></div>
+<div class="field"><h4>Description:</h4><p>A ratio and sum of same-rate independent gammas produce beta and gamma variables.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it to solve gamma-ratio questions quickly.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use for \(X/(X+Y)\) with independent same-rate gammas.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: gamma ratio, beta, sum, same rate.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(a,b\) are shapes and \(\lambda\) is the common rate.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>The gamma variables must be independent and have the same rate.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Jacobian transformation; gamma sum rule.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Using it when the rates are not equal.</p></div>
+</article>
+<article id="exponential-distribution" class="formula-card"><h3>Exponential Distribution<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[X\sim\operatorname{Exp}(\lambda)\quad\Longleftrightarrow\quad f_X(x)=\lambda e^{-\lambda x},\ x\gt0,\qquad E[X]=1/\lambda\]</div></div>
+<div class="field"><h4>Description:</h4><p>The exponential distribution is \(\Gamma(1,\lambda)\).</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it when a mixture simplifies to an exponential density.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when density is rate times a decaying exponential.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: exponential, waiting time, \(e^{-\lambda x}\).</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(\lambda\gt0\) is the rate.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>Support is positive.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Gamma density; geometric-gamma mixture.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Thinking the mean equals \(\lambda\); it equals \(1/\lambda\).</p></div>
+</article>
+<article id="geometric-distribution-on-1-2" class="formula-card"><h3>Geometric Distribution on 1,2,...<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[P(N=n)=p(1-p)^{n-1},\qquad E[N]=\frac1p,\qquad \operatorname{Var}(N)=\frac{1-p}{p^2}\]</div></div>
+<div class="field"><h4>Description:</h4><p>This geometric variable counts the trial of the first success.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it in geometric-gamma mixture questions.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when support is \(1,2,\ldots\).</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: geometric, first success, support starts at 1.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(p\in(0,1)\) is success probability.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>This formula is for the version starting at 1.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Law of total expectation; gamma mixtures.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Using the version that starts at 0.</p></div>
+</article>
+<article id="pascal-distribution-on-0-1" class="formula-card"><h3>Pascal Distribution on 0,1,...<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[P(N=n)=\binom{n+r-1}{n}(1-p)^rp^n,\quad E[N]=\frac{rp}{1-p},\quad \operatorname{Var}(N)=\frac{rp}{(1-p)^2}\]</div></div>
+<div class="field"><h4>Description:</h4><p>This is the Pascal or negative-binomial parametrization used in the papers.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it in Pascal-gamma mixture questions.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when support is \(0,1,2,\ldots\) and the mass has \(\binom{n+r-1}{n}\).</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: Pascal, negative binomial, \(r\), failures before successes.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(r\) is a positive integer and \(p\in(0,1)\).</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>Parametrizations vary; use the one stated in the question.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Poisson distribution; gamma-Pascal mixture.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Using the wrong parametrization for mean and variance.</p></div>
+</article>
+<article id="poisson-distribution" class="formula-card"><h3>Poisson Distribution<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[P(N=n)=e^{-m}\frac{m^n}{n!},\qquad E[N]=m,\qquad \operatorname{Var}(N)=m\]</div></div>
+<div class="field"><h4>Description:</h4><p>A Poisson variable has mass proportional to \(m^n/n!\).</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it to identify conditional distributions after Bayes simplification.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when a probability mass looks like \(e^{-m}m^n/n!\).</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: Poisson, factorial, count, shifted Poisson.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(m\gt0\) is the mean parameter.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>Support starts at 0.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Exponential series; mixture posterior distributions.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Forgetting shifts such as \(1+\operatorname{Poisson}(m)\).</p></div>
+</article>
+<article id="exponential-series" class="formula-card"><h3>Exponential Series<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[\sum_{n=0}^{\infty}\frac{a^n}{n!}=e^a\]</div></div>
+<div class="field"><h4>Description:</h4><p>This is the Taylor series of the exponential function.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it to simplify mixture sums.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when a sum contains powers divided by factorials.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: infinite sum, factorial, power series.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(a\) is any expression.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>The series converges for all real \(a\).</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Poisson distribution; marginal mixture density.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Forgetting to re-index the sum before applying it.</p></div>
+</article>
+<h3 class="topic-title">Conditioning and Mixtures</h3>
+<article id="discrete-continuous-joint-law" class="formula-card"><h3>Discrete-Continuous Joint Law<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[f_{N,X}(n,x)=P(N=n)f_{X|N=n}(x)\]</div></div>
+<div class="field"><h4>Description:</h4><p>This combines a discrete mass with a conditional continuous density.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it as the first step in mixture questions.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when \(N\) is discrete and \(X|N=n\) has a density.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: conditionally on \(N=n\), joint law, mixed distribution.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(N\) is discrete; \(X\) is continuous.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>Use the correct support for \(n\) and \(x\).</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Marginal mixture density; Bayes formula.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Calling it an ordinary density in both variables.</p></div>
+</article>
+<article id="marginal-mixture-density" class="formula-card"><h3>Marginal Mixture Density<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[f_X(x)=\sum_n P(N=n)f_{X|N=n}(x)\]</div></div>
+<div class="field"><h4>Description:</h4><p>This sums out the discrete mixing variable.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it to find the unconditional density of \(X\).</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when \(X\) is given conditionally on \(N\).</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: unconditional density, marginal density, mixture.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>The sum runs over all allowed values of \(N\).</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>The conditional density must be valid for each \(n\).</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Joint law; exponential series.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Starting the sum at the wrong index.</p></div>
+</article>
+<article id="bayes-formula-for-mixed-variables" class="formula-card"><h3>Bayes Formula for Mixed Variables<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[P(N=n|X=x)=\frac{P(N=n)f_{X|N=n}(x)}{f_X(x)}\]</div></div>
+<div class="field"><h4>Description:</h4><p>Bayes formula reverses conditioning between discrete and continuous variables.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it to find \(N|X=x\).</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when a posterior distribution of \(N\) is requested.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: conditional distribution of \(N\) given \(X=x\), posterior.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(f_X(x)\) is the marginal density of \(X\).</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>Requires \(f_X(x)&gt;0\).</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Joint law; marginal mixture density; Poisson identification.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Writing a density for \(N|X=x\), even though \(N\) is discrete.</p></div>
+</article>
+<article id="law-of-total-expectation" class="formula-card"><h3>Law of Total Expectation<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[E[X]=E[E[X|Y]]\]</div></div>
+<div class="field"><h4>Description:</h4><p>The overall mean equals the average of conditional means.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it to compute expectations by conditioning.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when conditional means are easier than direct integration.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: deduce expectation, using conditioning, mixture mean.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(Y\) is the conditioning variable.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>The expectation must exist.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Law of total variance; conditional gamma means.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Forgetting the outer expectation.</p></div>
+</article>
+<article id="law-of-total-variance" class="formula-card"><h3>Law of Total Variance<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[\operatorname{Var}(X)=E[\operatorname{Var}(X|Y)]+\operatorname{Var}(E[X|Y])\]</div></div>
+<div class="field"><h4>Description:</h4><p>Overall variance equals average conditional variance plus variance of conditional means.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it in mixture variance calculations.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when \(X|Y\) has known mean and variance.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: variance using conditioning, total variance.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(Y\) is the variable being conditioned on.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>Requires finite second moments.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Variance identity; law of total expectation.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Using \(E[E[X|Y]]\) instead of \(\operatorname{Var}(E[X|Y])\) in the second term.</p></div>
+</article>
+<article id="covariance-by-conditioning" class="formula-card"><h3>Covariance by Conditioning</h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[\operatorname{Cov}(N,X)=\operatorname{Cov}(N,E[X|N])\]</div></div>
+<div class="field"><h4>Description:</h4><p>This works when the remaining conditional noise has mean zero given \(N\).</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it to compute covariance in mixture models.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when \(E[X|N]\) is known and covariance with \(N\) is requested.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: covariance, mixture, conditional expectation.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(N\) is the conditioning variable; \(X\) is the mixed variable.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>Second moments must exist and the conditioning identity must apply.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Law of total expectation; variance of \(N\).</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Ignoring the condition that the residual has zero conditional mean.</p></div>
+</article>
+<h3 class="topic-title">Brownian Motion and Ito Calculus</h3>
+<article id="brownian-fixed-time-distribution" class="formula-card"><h3>Brownian Fixed-Time Distribution<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[W_t-W_s\sim N(0,t-s),\qquad W_t\sim N(0,t)\]</div></div>
+<div class="field"><h4>Description:</h4><p>Brownian increments are normal with variance equal to elapsed time.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it for Brownian probabilities and moments.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use whenever Brownian motion is evaluated at a fixed time.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: Brownian motion, increments, fixed time.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(0\le s\le t\); \(W_t\) is Brownian motion.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>Standard Brownian motion starts at 0 and has independent increments.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Normal density; normal exponential moment.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Using variance \(t^2\) instead of \(t\).</p></div>
+</article>
+<article id="ito-multiplication-table" class="formula-card"><h3>Ito Multiplication Table<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[(dW_t)^2=dt,\qquad dt\,dW_t=0,\qquad (dt)^2=0\]</div></div>
+<div class="field"><h4>Description:</h4><p>These are the formal multiplication rules of Ito calculus.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use them in every stochastic differential calculation.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when expanding \((dX_t)^2\) or applying Ito formula.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: Ito rule, quadratic variation, stochastic differential.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(dW_t\) is a Brownian increment; \(dt\) is a time increment.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>Applies to Brownian-driven Ito calculus.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Ito formula; product rule.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Setting \((dW_t)^2=0\) as in ordinary calculus.</p></div>
+</article>
+<article id="quadratic-covariation-with-correlation" class="formula-card"><h3>Quadratic Covariation with Correlation<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[dW_t^X dW_t^Y=\rho\,dt\]</div></div>
+<div class="field"><h4>Description:</h4><p>This is the cross-product rule for correlated Brownian motions.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it in correlated asset and ratio problems.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when Brownian motions have correlation \(\rho\).</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: correlation, covariation, \(d\langle W^X,W^Y\rangle\).</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(\rho\in[-1,1]\) is correlation.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>The Brownian motions must have instantaneous correlation \(\rho\).</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Ito formula; ratio of correlated GBMs.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Using \(\rho^2dt\) or forgetting the cross term.</p></div>
+</article>
+<article id="stochastic-integral-mean-zero" class="formula-card"><h3>Stochastic Integral Mean Zero<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[E\left[\int_0^tH_s\,dW_s\right]=0\]</div></div>
+<div class="field"><h4>Description:</h4><p>A well-behaved Ito integral has expectation zero.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it to take expectations of SDEs.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when an SDE contains a stochastic integral and you need the mean.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: expectation of SDE, stochastic integral, martingale term.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(H_s\) is an adapted integrand.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>Requires suitable integrability, usually square integrability.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Ito isometry; linear ODE for expectations.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Dropping a stochastic integral without checking it is integrable.</p></div>
+</article>
+<article id="ito-isometry" class="formula-card"><h3>Ito Isometry<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[E\left[\left(\int_0^tH_s\,dW_s\right)^2\right]=E\left[\int_0^tH_s^2\,ds\right]\]</div></div>
+<div class="field"><h4>Description:</h4><p>This converts a second moment of a stochastic integral into an ordinary integral.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it to compute variances and check square integrability.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when an expression contains \(E[(\int H\,dW)^2]\).</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: Ito isometry, second moment of stochastic integral.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(H_s\) is the integrand.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>Requires \(E[\int_0^tH_s^2ds]&lt;\infty\).</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Stochastic integral mean zero; OU variance.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Forgetting to square \(H_s\).</p></div>
+</article>
+<article id="ito-formula-time-dependent" class="formula-card"><h3>Ito Formula, Time-Dependent<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[df(t,X_t)=f_tdt+f_xdX_t+\frac12f_{xx}(dX_t)^2\]</div></div>
+<div class="field"><h4>Description:</h4><p>Ito formula is the stochastic chain rule.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it to find dynamics of transformed processes.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use whenever \(Y_t=f(t,X_t)\).</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: find dynamics, show local martingale, transformation of process.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(f_t,f_x,f_{xx}\) are partial derivatives.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>Usually requires \(f\in C^{1,2}\).</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Ito multiplication table; generator.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Forgetting the second-order correction.</p></div>
+</article>
+<article id="ito-formula-one-variable" class="formula-card"><h3>Ito Formula, One Variable<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[df(X_t)=f'(X_t)dX_t+\frac12f''(X_t)d\langle X\rangle_t\]</div></div>
+<div class="field"><h4>Description:</h4><p>This is Ito formula without explicit time dependence.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it for squares, logs, exponentials, powers, and reciprocals.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when \(Y_t=f(X_t)\).</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: \(X_t^2\), \(\log X_t\), \(e^{X_t}\), reciprocal.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(d\langle X\rangle_t\) is quadratic variation.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>\(f\) must be twice differentiable.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Power transformation; reciprocal transformation.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Treating it like ordinary chain rule.</p></div>
+</article>
+<article id="ito-product-rule" class="formula-card"><h3>Ito Product Rule<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[d(X_tY_t)=X_tdY_t+Y_tdX_t+d\langle X,Y\rangle_t\]</div></div>
+<div class="field"><h4>Description:</h4><p>The stochastic product rule has an extra covariation term.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it for products and integrating factors.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when differentiating a product of stochastic processes.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: product, integrating factor, variation of constants.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(d\langle X,Y\rangle_t\) is quadratic covariation.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>Applies to Ito processes and semimartingales.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Linear SDE solution; ratio rule.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Using the ordinary product rule only.</p></div>
+</article>
+<article id="logarithm-rule-for-gbm" class="formula-card"><h3>Logarithm Rule for GBM<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[\frac{dS_t}{S_t}=\mu dt+\sigma dW_t\quad\Longrightarrow\quad d\log S_t=(\mu-\tfrac12\sigma^2)dt+\sigma dW_t\]</div></div>
+<div class="field"><h4>Description:</h4><p>The log of GBM has an Ito correction.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it to derive lognormal laws.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use for stock-price dynamics in proportional form.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: GBM, log price, \(dS/S\).</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(\mu\) is drift and \(\sigma\) is volatility.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>\(S_t\) must stay positive.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>GBM solution; lognormal moment.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Forgetting the negative half-volatility correction.</p></div>
+</article>
+<article id="brownian-exponential-martingale" class="formula-card"><h3>Brownian Exponential Martingale<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[M_t=\exp(\theta W_t-\tfrac12\theta^2t)\]</div></div>
+<div class="field"><h4>Description:</h4><p>This is the standard exponential martingale for Brownian motion.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it to build density processes and prove martingales.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when an exponential of Brownian motion appears.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: exponential martingale, density, \(e^{W_t-t/2}\).</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(\theta\) is a constant.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>For constant \(\theta\), it is a true martingale on finite horizons.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Girsanov theorem; normal exponential moment.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Forgetting the \(-\theta^2t/2\) correction.</p></div>
+</article>
+<article id="diffusion-generator" class="formula-card"><h3>Diffusion Generator<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[dX_t=b(X_t)dt+\sqrt{a(X_t)}dW_t\quad\Longrightarrow\quad \mathcal Lf=b f'+\tfrac12a f'' \]</div></div>
+<div class="field"><h4>Description:</h4><p>The generator is the drift operator produced by Ito formula.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it to find martingale functions and scale functions.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when the question mentions generator or local martingale \(s(X_t)\).</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: generator, \(\mathcal L\), diffusion, scale function.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(b\) is drift and \(a\) is variance coefficient.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>\(f\) should be twice differentiable and \(a\ge0\).</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Scale function equation; Ito formula.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Missing the factor \(1/2\) in the second derivative term.</p></div>
+</article>
+<article id="scale-function-equation" class="formula-card"><h3>Scale Function Equation<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[b(x)s'(x)+\tfrac12a(x)s''(x)=0\]</div></div>
+<div class="field"><h4>Description:</h4><p>This is the zero-drift condition for \(s(X_t)\) to be a local martingale.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it to construct martingales from diffusions.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when asked for a scale function or martingale transform.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: scale function, local martingale, zero drift.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(s\) is the scale function.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>\(s\) should be twice differentiable and \(a(x)\ne0\) on the interval.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Diffusion generator; scale integral formula.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Forgetting that the drift of \(ds(X_t)\) must vanish.</p></div>
+</article>
+<article id="scale-function-integral-formula" class="formula-card"><h3>Scale Function Integral Formula<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[s(x)=\int^x\exp\left(\int^y-\frac{2b(z)}{a(z)}\,dz\right)dy\]</div></div>
+<div class="field"><h4>Description:</h4><p>This solves the scale function equation.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it to build \(s\) from drift and variance functions.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when \(b(x)\) and \(a(x)\) are given and a scale function is requested.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: nested integral, \(-2b/a\), scale function.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(b\) is drift; \(a\) is squared diffusion coefficient.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>The integrals must exist and \(a(z)\ne0\).</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Scale function equation; generator.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Dropping the minus sign in \(-2b/a\).</p></div>
+</article>
+<h3 class="topic-title">Girsanov and Risk-Neutral Pricing</h3>
+<article id="stochastic-exponential-density" class="formula-card"><h3>Stochastic Exponential Density<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[Z_t=\mathcal E\left(\int_0^t\theta_s\,dW_s\right),\qquad dZ_t=Z_t\theta_t\,dW_t\]</div></div>
+<div class="field"><h4>Description:</h4><p>This is the standard form of a martingale density process.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it to identify the Girsanov kernel \(\theta_t\).</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when \(dQ/dP\) is given by a positive martingale.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: density process, stochastic exponential, \(dZ=Z\theta dW\).</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(Z_t\) is the density; \(\theta_t\) is the drift-shift process.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>\(Z_t\) must be a true positive martingale with expectation 1.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Girsanov theorem; Brownian exponential martingale.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Forgetting the factor \(Z_t\) in \(dZ_t\).</p></div>
+</article>
+<article id="girsanov-theorem" class="formula-card"><h3>Girsanov Theorem<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[\frac{dQ}{dP}\Big|_{\mathcal F_t}=\mathcal E\left(\int_0^t\theta_s\,dW_s\right),\qquad \widetilde W_t=W_t-\int_0^t\theta_s\,ds\]</div></div>
+<div class="field"><h4>Description:</h4><p>Girsanov theorem tells how Brownian motion changes under a new measure.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it to change drifts in SDEs and build risk-neutral measures.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when a new probability measure is defined by a density.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: \(dQ/dP\), change of measure, Girsanov, market price of risk.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(\widetilde W\) is Brownian under \(Q\).</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>The density process must be a true martingale.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Stochastic exponential density; risk-neutral drift.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Getting the sign wrong. Write the Brownian relation first.</p></div>
+</article>
+<article id="constant-theta-girsanov-form" class="formula-card"><h3>Constant-Theta Girsanov Form<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[\frac{dQ}{dP}=\exp(-\theta W_T-\tfrac12\theta^2T),\qquad W_t^Q=W_t+\theta t\]</div></div>
+<div class="field"><h4>Description:</h4><p>This is a common constant drift-shift version of Girsanov.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it when the density has a constant \(\theta\).</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use for constant market price of risk problems.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: constant theta, \(-\theta W_T\), Brownian under \(Q\).</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(W^Q\) is Brownian under \(Q\).</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>Finite horizon and constant \(\theta\).</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Girsanov theorem; SDE drift adjustment.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Mixing this sign convention with the opposite one.</p></div>
+</article>
+<article id="change-of-measure-expectation" class="formula-card"><h3>Change of Measure Expectation<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[E^Q[Y]=E^P[Z_TY],\qquad Z_T=\frac{dQ}{dP}\Big|_{\mathcal F_T}\]</div></div>
+<div class="field"><h4>Description:</h4><p>Expectation under the new measure equals weighted expectation under the old measure.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it to compute moments under \(Q\) from \(P\).</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when a measure is defined by \(dQ/dP=Z_T\).</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: expectation under \(Q\), Radon-Nikodym derivative, density.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(Y\) is the payoff or random variable.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>\(Z_T\) must be a valid density and the expectation must be finite.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Girsanov theorem; martingale density.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Using \(E^P[Y]\) after changing measure.</p></div>
+</article>
+<article id="risk-neutral-drift-condition" class="formula-card"><h3>Risk-Neutral Drift Condition<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[\frac{dS_t}{S_t}=r\,dt+\text{volatility terms under }Q\]</div></div>
+<div class="field"><h4>Description:</h4><p>Under a risk-neutral measure, a tradable risky asset has drift equal to the risk-free rate.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it to find risk-neutral dynamics.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use before pricing derivatives.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: risk-neutral, discounted asset is a martingale, find \(Q\).</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(S_t\) is a tradable asset and \(r\) is the risk-free rate.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>Applies to tradable assets under the pricing measure.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Girsanov theorem; risk-neutral pricing.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Leaving the physical drift \(\mu\) in pricing dynamics.</p></div>
+</article>
+<article id="risk-neutral-pricing" class="formula-card"><h3>Risk-Neutral Pricing<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[V_0=e^{-rT}E^Q[\text{payoff at }T]\]</div></div>
+<div class="field"><h4>Description:</h4><p>Derivative price equals discounted risk-neutral expected payoff.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it to price contracts and options.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use after finding or being given risk-neutral dynamics.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: price, payoff, derivative, contract, option.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(V_0\) is time-0 price; \(Q\) is risk-neutral measure.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>Use \(Q\), not \(P\), for pricing.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Risk-neutral drift; lognormal option formulas.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Forgetting the discount factor \(e^{-rT}\).</p></div>
+</article>
+<article id="multidimensional-market-price-of-risk" class="formula-card"><h3>Multidimensional Market Price of Risk<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[d\widetilde B_t^i=dB_t^i+\theta_i dt,\qquad dB_t^i=d\widetilde B_t^i-\theta_i dt\]</div></div>
+<div class="field"><h4>Description:</h4><p>Each independent Brownian risk factor has its own risk premium component.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it in multi-asset models.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use after rewriting correlated Brownian motions using independent factors.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: market price of risk vector, multiple Brownian motions.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(\theta_i\) is the market price of risk for factor \(i\).</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>The Brownian factor representation must be valid.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Correlated Brownian decomposition; risk-neutral drift.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Using one \(\theta\) per asset rather than per risk factor.</p></div>
+</article>
+<article id="correlated-brownian-decomposition" class="formula-card"><h3>Correlated Brownian Decomposition<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[W_t^2=\rho B_t^1+\sqrt{1-\rho^2}\,B_t^2\]</div></div>
+<div class="field"><h4>Description:</h4><p>A correlated Brownian motion can be represented with independent Brownian factors.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it before multidimensional Girsanov calculations.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when Brownian motions have correlation \(\rho\).</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: correlated Brownian, independent factors, \(\rho\).</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(B^1,B^2\) are independent Brownian motions.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>Usually need \(|\rho|&lt;1\) for the denominator not to vanish.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Quadratic covariation; market price of risk vector.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Forgetting \(\sqrt{1-\rho^2}\).</p></div>
+</article>
+<h3 class="topic-title">Geometric Brownian Motion and Option Formulas</h3>
+<article id="gbm-solution" class="formula-card"><h3>GBM Solution<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[\frac{dS_t}{S_t}=\mu dt+\sigma dW_t\quad\Longrightarrow\quad S_T=S_0\exp\left((\mu-\tfrac12\sigma^2)T+\sigma W_T\right)\]</div></div>
+<div class="field"><h4>Description:</h4><p>This is the explicit solution of geometric Brownian motion.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it to obtain lognormal distributions.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when an SDE is proportional in \(S_t\).</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: GBM, stock price, \(dS/S\).</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(S_0\) is initial value; \(\mu\) drift; \(\sigma\) volatility.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>Constant coefficients in this form.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Logarithm rule; lognormal moment.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Forgetting \(-\sigma^2/2\) in the exponent.</p></div>
+</article>
+<article id="geometric-brownian-mean" class="formula-card"><h3>Geometric Brownian Mean<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[\frac{dG_t}{G_t}=\alpha dt+\text{Brownian terms}\quad\Longrightarrow\quad E[G_T]=G_0e^{\alpha T}\]</div></div>
+<div class="field"><h4>Description:</h4><p>The mean grows from the initial value at the proportional drift rate.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it to price powers or ratios once their proportional drift is known.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when an SDE has \(dG/G=\alpha dt+\) martingale terms.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: expectation of GBM, proportional drift, ratio price.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(G_0\) is initial value and \(\alpha\) is proportional drift.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>The stochastic exponential part must be a true martingale.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Risk-neutral pricing; GBM solution.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Forgetting the initial value \(G_0\).</p></div>
+</article>
+<article id="gbm-log-law" class="formula-card"><h3>GBM Log Law<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[\frac{dR_t}{R_t}=m dt+\nu dB_t\quad\Longrightarrow\quad \log R_T\sim N\left(\log R_0+(m-\tfrac12\nu^2)T,\nu^2T\right)\]</div></div>
+<div class="field"><h4>Description:</h4><p>The log of a GBM is normally distributed.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it for lognormal probabilities and option pricing.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when a payoff depends on a lognormal variable.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: lognormal, ratio, \(dR/R\), \(d_1,d_2\).</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(m\) is proportional drift and \(\nu\) total volatility.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>Volatility must be constant or reducible to constant total volatility.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Lognormal truncated expectation; call formula.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Using \(m\) instead of \(m-\nu^2/2\) in the log mean.</p></div>
+</article>
+<article id="ratio-of-correlated-gbms" class="formula-card"><h3>Ratio of Correlated GBMs<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[R_t=S_t^1/S_t^2,\qquad \nu_R^2=\sigma_1^2+\sigma_2^2-2\rho\sigma_1\sigma_2,\qquad m_R=\sigma_2^2-\rho\sigma_1\sigma_2\]</div></div>
+<div class="field"><h4>Description:</h4><p>These are the total volatility and drift correction for a stock ratio under risk-neutral dynamics.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it for ratio options and payoff formulas involving \(S_T^1/S_T^2\).</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when two correlated GBMs appear as a quotient.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: ratio, correlated stocks, \(S^1/S^2\).</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(\sigma_1,\sigma_2\) are volatilities and \(\rho\) is correlation.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>Both assets are under risk-neutral dynamics with common risk-free drift.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Quadratic covariation; GBM log law.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Forgetting that the \(r dt\) terms cancel in the ratio.</p></div>
+</article>
+<article id="lognormal-truncated-expectation" class="formula-card"><h3>Lognormal Truncated Expectation<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[E[R_T\mathbf 1_{\{R_T&gt;K\}}]=R_0e^{mT}N(d_1),\qquad P(R_T&gt;K)=N(d_2)\]</div></div>
+<div class="field"><h4>Description:</h4><p>These identities split a lognormal payoff above a threshold.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use them for call-style option formulas.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when the payoff contains \(R_T&gt;K\) or \((R_T-K)^+\).</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: call option, threshold, indicator, \(d_1,d_2\).</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(d_2=[\log(R_0/K)+(m-\nu^2/2)T]/(\nu\sqrt T)\), and \(d_1=d_2+
+u\sqrt T\).</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>\(R_T\) must be lognormal and \(K&gt;0\).</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>GBM log law; call payoff formula.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Using \(d_1\) for the probability term.</p></div>
+</article>
+<article id="call-payoff-formula" class="formula-card"><h3>Call Payoff Formula<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[E[(R_T-K)^+]=R_0e^{mT}N(d_1)-KN(d_2)\]</div></div>
+<div class="field"><h4>Description:</h4><p>This is the undiscounted expectation of a lognormal call payoff.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it before discounting to price a call option.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when payoff is exactly \((R_T-K)^+\).</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: call, positive part, payoff above strike.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(K\) is the strike and \(N\) is the standard normal CDF.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>\(R_T\) must be lognormal and \(K&gt;0\).</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Risk-neutral pricing; truncated expectation.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Confusing this with \(\max(R_T,K)\).</p></div>
+</article>
+<article id="maximum-payoff-decomposition" class="formula-card"><h3>Maximum Payoff Decomposition</h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[\max(R_T,K)=R_T\mathbf 1_{\{R_T&gt;K\}}+K\mathbf 1_{\{R_T\le K\}}\]</div></div>
+<div class="field"><h4>Description:</h4><p>This decomposes a maximum payoff into two regions.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it when the payoff is written as a maximum, not a call.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use for \(\max(R_T,K)\).</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: max, maximum, larger of two values.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(R_T\) is random; \(K\) is fixed.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>This algebraic identity is always valid.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Call payoff formula; lognormal truncated expectation.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Replacing it by \((R_T-K)^+\).</p></div>
+</article>
+<h3 class="topic-title">SDE Solution Tools and Special Densities</h3>
+<article id="linear-ode-for-expectations" class="formula-card"><h3>Linear ODE for Expectations<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[m'(t)=A+km(t),\quad m(0)=m_0\quad\Longrightarrow\quad m(t)=m_0e^{kt}+\frac{A}{k}(e^{kt}-1)\ (k\ne0)\]</div></div>
+<div class="field"><h4>Description:</h4><p>This solves the common expectation ODE from an SDE.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it to compute means or second moments.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use after taking expectations and removing the mean-zero stochastic integral.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: expectation ODE, first-order linear ODE.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(m(t)\) is the unknown mean; \(A,k\) are constants.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>If \(k=0\), use \(m(t)=m_0+At\).</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Stochastic integral mean zero; Ito formula.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Forgetting \((e^{kt}-1)\).</p></div>
+</article>
+<article id="linear-sde-integrating-factor-pattern" class="formula-card"><h3>Linear SDE Integrating Factor Pattern<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[dY_t=(c+kY_t)dt+\sigma Y_t dW_t\quad\Longrightarrow\quad Y_t=\Phi_t\left(Y_0+c\int_0^t\Phi_s^{-1}\,ds\right)\]</div></div>
+<div class="field"><h4>Description:</h4><p>This is the solution pattern for a linear SDE.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it after transforming a nonlinear SDE into a linear one.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when the SDE is linear in \(Y_t\).</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: linear SDE, integrating factor, variation of constants.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(\Phi_t\) solves the homogeneous equation.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>This displayed form assumes constant-style coefficients.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Ito product rule; GBM solution.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Forgetting the inverse \(\Phi_s^{-1}\) inside the integral.</p></div>
+</article>
+<article id="ornstein-uhlenbeck-solution" class="formula-card"><h3>Ornstein-Uhlenbeck Solution<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[d\sigma_t=(-\lambda\sigma_t-c)dt+\delta dW_t\quad\Longrightarrow\quad \sigma_T=e^{-\lambda T}\sigma_0-\frac{c}{\lambda}(1-e^{-\lambda T})+\delta e^{-\lambda T}\int_0^T e^{\lambda s}dW_s\]</div></div>
+<div class="field"><h4>Description:</h4><p>This solves a mean-reverting linear SDE with constant forcing.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it to price payoffs depending on \(\sigma_T\) and \(\sigma_T^2\).</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use for OU-type volatility dynamics.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: OU, mean reversion, \(-\lambda\sigma_t\).</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(\lambda\) is mean reversion speed; \(c\) is constant forcing; \(\delta\) is volatility.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>Formula assumes \(\lambda\ne0\).</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Ito isometry; risk-neutral pricing.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Getting the sign of the forcing term wrong.</p></div>
+</article>
+<article id="ou-stochastic-integral-variance" class="formula-card"><h3>OU Stochastic Integral Variance<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[\operatorname{Var}\left(\delta e^{-\lambda T}\int_0^T e^{\lambda s}dW_s\right)=\frac{\delta^2}{2\lambda}(1-e^{-2\lambda T})\]</div></div>
+<div class="field"><h4>Description:</h4><p>This is the variance of the random part of the OU solution.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it to compute \(E[\sigma_T^2]\).</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use after solving an OU SDE and needing a second moment.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: OU variance, square payoff, Ito isometry.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(\delta\) is diffusion coefficient and \(\lambda\) is mean reversion.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>Usually \(\lambda&gt;0\).</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>OU solution; Ito isometry.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Squaring the mean and forgetting the variance.</p></div>
+</article>
+<article id="square-transformation" class="formula-card"><h3>Square Transformation<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[Y_t=X_t^2\quad\Longrightarrow\quad dY_t=2X_t dX_t+(dX_t)^2\]</div></div>
+<div class="field"><h4>Description:</h4><p>This is Ito formula for the square function.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it to turn certain nonlinear SDEs into linear SDEs.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when the problem sets \(Y_t=X_t^2\) or asks for \(E[X_t^2]\).</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: square transform, second moment, nonlinear SDE.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(Y_t\) is the square of \(X_t\).</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>\(X_t\) must be an Ito process.</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Ito formula; linear SDE solution.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Writing only \(2X_tdX_t\).</p></div>
+</article>
+<article id="reciprocal-transformation" class="formula-card"><h3>Reciprocal Transformation</h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[X_t=1/S_t\quad\Longrightarrow\quad dX_t=-S_t^{-2}dS_t+S_t^{-3}(dS_t)^2\]</div></div>
+<div class="field"><h4>Description:</h4><p>This is Ito formula for the reciprocal function.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it to simplify some positive nonlinear SDEs.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when a problem suggests \(X_t=1/S_t\).</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: reciprocal, logistic SDE, inverse process.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(S_t&gt;0\) is the original process.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>The reciprocal requires \(S_t\ne0\).</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Ito formula; linear SDE solution.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Forgetting the \(S_t^{-3}(dS_t)^2\) term.</p></div>
+</article>
+<article id="brownian-bridge-density-to-zero" class="formula-card"><h3>Brownian Bridge Density to Zero<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[Z_t=\sqrt{\frac{T}{T-t}}\exp\left(-\frac{W_t^2}{2(T-t)}\right),\qquad t&lt;T\]</div></div>
+<div class="field"><h4>Description:</h4><p>This density changes Brownian motion into a bridge pinned at zero.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it for Brownian bridge measure-change questions.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when this exact square-root and exponential expression appears.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: Brownian bridge, \(T-t\), endpoint zero.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(T\) is terminal time and \(W_t\) is Brownian motion.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>Valid only for \(t&lt;T\).</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Girsanov theorem; Brownian bridge drift.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Trying to use it at \(t=T\).</p></div>
+</article>
+<article id="brownian-bridge-drift-to-zero" class="formula-card"><h3>Brownian Bridge Drift to Zero<span class="badge">High priority</span></h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[dW_t=-\frac{W_t}{T-t}dt+d\widetilde W_t,\qquad t&lt;T\]</div></div>
+<div class="field"><h4>Description:</h4><p>Under the bridge measure, the process is pulled toward zero.</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it after applying Girsanov to the bridge density.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when endpoint zero is imposed.</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: bridge drift, pulled to zero, \(-W_t/(T-t)\).</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(\widetilde W_t\) is Brownian motion under the bridge measure.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>Valid only for \(t&lt;T\).</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Brownian bridge density; Girsanov theorem.</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Thinking \(W_t\) itself remains Brownian under the new measure.</p></div>
+</article>
+<article id="brownian-bridge-density-to-endpoint-a" class="formula-card"><h3>Brownian Bridge Density to Endpoint a</h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[Z_t(a)=\sqrt{\frac{T}{T-t}}\exp\left(-\frac{(a-W_t)^2}{2(T-t)}+\frac{a^2}{2T}\right)\]</div></div>
+<div class="field"><h4>Description:</h4><p>This density changes Brownian motion into a bridge pinned at endpoint \(a\).</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it for generalized Brownian bridge questions.</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use when the terminal endpoint is a fixed number \(a\).</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: endpoint \(a\), Brownian bridge, \((a-W_t)^2\).</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(a\) is the target endpoint.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>Valid only for \(t&lt;T\).</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Brownian bridge drift to endpoint \(a\).</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Omitting the normalizing factor \(e^{a^2/(2T)}\).</p></div>
+</article>
+<article id="brownian-bridge-drift-to-endpoint-a" class="formula-card"><h3>Brownian Bridge Drift to Endpoint a</h3>
+<div class="field"><h4>Formula:</h4><div class="math">\[dW_t=\frac{a-W_t}{T-t}dt+d\widetilde W_t^{(a)},\qquad t&lt;T\]</div></div>
+<div class="field"><h4>Description:</h4><p>Under the endpoint-\(a\) bridge measure, the process is pulled toward \(a\).</p></div>
+<div class="field"><h4>Purpose:</h4><p>Use it after identifying \(Z_t(a)\).</p></div>
+<div class="field"><h4>When to Use:</h4><p>Use for Brownian bridge dynamics with endpoint \(a\).</p></div>
+<div class="field"><h4>How to Recognize It in an Exam:</h4><p>Keywords: \((a-W_t)/(T-t)\), endpoint drift.</p></div>
+<div class="field"><h4>Meaning of Symbols:</h4><p>\(\widetilde W^{(a)}\) is Brownian under the new measure.</p></div>
+<div class="field"><h4>Conditions or Assumptions:</h4><p>Valid only for \(t&lt;T\).</p></div>
+<div class="field"><h4>Related Formulas:</h4><p>Girsanov theorem; bridge density to endpoint \(a\).</p></div>
+<div class="field"><h4>Common Mistakes:</h4><p>Reversing the sign and making the drift move away from \(a\).</p></div>
+</article>
+</section>
+<section id="complete-cheat-sheet"><h2>1. Complete Formula Cheat Sheet</h2><div class="note"><p>Formulas only, grouped by topic, for night-before revision.</p></div>
+<div class="cheat-topic"><h3>Basic Probability and Moments</h3><ul class="cheat-list">
+<li><strong>Density Normalization:</strong> \(\int_{\text{support}} f_X(x)\,dx=1,\qquad f_X(x)\ge0\)</li>
+<li><strong>CDF and Density Relationship:</strong> \(F_X(x)=P(X\le x),\qquad f_X(x)=F_X'(x)\)</li>
+<li><strong>Expectation Integral:</strong> \(E[g(X)]=\int_{\text{support}} g(x)f_X(x)\,dx\)</li>
+<li><strong>Variance Identity:</strong> \(\operatorname{Var}(X)=E[X^2]-(E[X])^2\)</li>
+<li><strong>Covariance Identity:</strong> \(\operatorname{Cov}(X,Y)=E[XY]-E[X]E[Y]\)</li>
+<li><strong>Moment Generating Function:</strong> \(M_X(t)=E[e^{tX}],\qquad E[X^n]=M_X^{(n)}(0)\)</li>
+</ul></div>
+<div class="cheat-topic"><h3>Transformations and Change of Variables</h3><ul class="cheat-list">
+<li><strong>Uniform Area Rule:</strong> \((X,Y)\sim U([0,1]^2)\quad\Longrightarrow\quad P((X,Y)\in A)=\operatorname{Area}(A)\)</li>
+<li><strong>One-to-One Density Transformation:</strong> \(f_Y(y)=f_X(g^{-1}(y))\left|\frac{d}{dy}g^{-1}(y)\right|\)</li>
+<li><strong>Many-to-One Density Transformation:</strong> \(f_Y(y)=\sum_i \frac{f_X(x_i)}{|g'(x_i)|},\qquad g(x_i)=y\)</li>
+<li><strong>Two-Dimensional Jacobian Formula:</strong> \(f_{U,V}(u,v)=f_{X,Y}(x(u,v),y(u,v))\left|\frac{\partial(x,y)}{\partial(u,v)}\right|\)</li>
+<li><strong>Ratio Density Formula:</strong> \(Z=Y/X\quad\Longrightarrow\quad f_Z(z)=\int_{-\infty}^{\infty}|x|f_{X,Y}(x,zx)\,dx\)</li>
+</ul></div>
+<div class="cheat-topic"><h3>Normal and Lognormal Formulas</h3><ul class="cheat-list">
+<li><strong>Normal Density:</strong> \(X\sim N(\mu,\sigma^2)\quad\Longrightarrow\quad f_X(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-(x-\mu)^2/(2\sigma^2)}\)</li>
+<li><strong>Normal Standardization:</strong> \(P(X\le x)=N\left(\frac{x-\mu}{\sigma}\right),\qquad X\sim N(\mu,\sigma^2)\)</li>
+<li><strong>Normal Exponential Moment:</strong> \(W_t\sim N(0,t)\quad\Longrightarrow\quad E[e^{uW_t}]=e^{u^2t/2}\)</li>
+<li><strong>Normal Fourth Moment:</strong> \(W_T\sim N(0,T)\quad\Longrightarrow\quad E[W_T^2]=T,\\quad E[W_T^4]=3T^2\)</li>
+<li><strong>Lognormal Moment:</strong> \(Y=e^X,\ X\sim N(m,v)\quad\Longrightarrow\quad E[Y^q]=e^{qm+q^2v/2}\)</li>
+</ul></div>
+<div class="cheat-topic"><h3>Gamma, Beta, and Discrete Distributions</h3><ul class="cheat-list">
+<li><strong>Gamma Density:</strong> \(X\sim\Gamma(k,\lambda)\quad\Longrightarrow\quad f_X(x)=\frac{\lambda^k}{\Gamma(k)}x^{k-1}e^{-\lambda x},\quad x\gt0\)</li>
+<li><strong>Gamma Mean, Variance, and MGF:</strong> \(E[X]=\frac{k}{\lambda},\qquad \operatorname{Var}(X)=\frac{k}{\lambda^2},\qquad M_X(t)=\left(1-\frac{t}{\lambda}\right)^{-k}\)</li>
+<li><strong>Gamma Moment Formula:</strong> \(E[X^m]=\frac{\Gamma(k+m)}{\Gamma(k)\lambda^m},\qquad X\sim\Gamma(k,\lambda)\)</li>
+<li><strong>Gamma Sum Rule:</strong> \(X\sim\Gamma(a,\lambda),\ Y\sim\Gamma(b,\lambda),\ X\perp Y\quad\Longrightarrow\quad X+Y\sim\Gamma(a+b,\lambda)\)</li>
+<li><strong>Gamma Function Recursion:</strong> \(\Gamma(q+1)=q\Gamma(q),\qquad \Gamma(n)=(n-1)!\)</li>
+<li><strong>Beta Integral:</strong> \(\int_0^1x^{u-1}(1-x)^{v-1}\,dx=\frac{\Gamma(u)\Gamma(v)}{\Gamma(u+v)}\)</li>
+<li><strong>Beta Density:</strong> \(X\sim\operatorname{Beta}(\alpha,\beta)\quad\Longrightarrow\quad f_X(x)=\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}x^{\alpha-1}(1-x)^{\beta-1},\quad0\lt x\lt1\)</li>
+<li><strong>Beta Mean and Variance:</strong> \(E[X]=\frac{\alpha}{\alpha+\beta},\qquad \operatorname{Var}(X)=\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}\)</li>
+<li><strong>Beta-Gamma Relationship:</strong> \(X\sim\Gamma(a,\lambda),\ Y\sim\Gamma(b,\lambda),\ X\perp Y\quad\Longrightarrow\quad \frac{X}{X+Y}\sim\operatorname{Beta}(a,b),\quad X+Y\sim\Gamma(a+b,\lambda)\)</li>
+<li><strong>Exponential Distribution:</strong> \(X\sim\operatorname{Exp}(\lambda)\quad\Longleftrightarrow\quad f_X(x)=\lambda e^{-\lambda x},\ x\gt0,\qquad E[X]=1/\lambda\)</li>
+<li><strong>Geometric Distribution on 1,2,...:</strong> \(P(N=n)=p(1-p)^{n-1},\qquad E[N]=\frac1p,\qquad \operatorname{Var}(N)=\frac{1-p}{p^2}\)</li>
+<li><strong>Pascal Distribution on 0,1,...:</strong> \(P(N=n)=\binom{n+r-1}{n}(1-p)^rp^n,\quad E[N]=\frac{rp}{1-p},\quad \operatorname{Var}(N)=\frac{rp}{(1-p)^2}\)</li>
+<li><strong>Poisson Distribution:</strong> \(P(N=n)=e^{-m}\frac{m^n}{n!},\qquad E[N]=m,\qquad \operatorname{Var}(N)=m\)</li>
+<li><strong>Exponential Series:</strong> \(\sum_{n=0}^{\infty}\frac{a^n}{n!}=e^a\)</li>
+</ul></div>
+<div class="cheat-topic"><h3>Conditioning and Mixtures</h3><ul class="cheat-list">
+<li><strong>Discrete-Continuous Joint Law:</strong> \(f_{N,X}(n,x)=P(N=n)f_{X|N=n}(x)\)</li>
+<li><strong>Marginal Mixture Density:</strong> \(f_X(x)=\sum_n P(N=n)f_{X|N=n}(x)\)</li>
+<li><strong>Bayes Formula for Mixed Variables:</strong> \(P(N=n|X=x)=\frac{P(N=n)f_{X|N=n}(x)}{f_X(x)}\)</li>
+<li><strong>Law of Total Expectation:</strong> \(E[X]=E[E[X|Y]]\)</li>
+<li><strong>Law of Total Variance:</strong> \(\operatorname{Var}(X)=E[\operatorname{Var}(X|Y)]+\operatorname{Var}(E[X|Y])\)</li>
+<li><strong>Covariance by Conditioning:</strong> \(\operatorname{Cov}(N,X)=\operatorname{Cov}(N,E[X|N])\)</li>
+</ul></div>
+<div class="cheat-topic"><h3>Brownian Motion and Ito Calculus</h3><ul class="cheat-list">
+<li><strong>Brownian Fixed-Time Distribution:</strong> \(W_t-W_s\sim N(0,t-s),\qquad W_t\sim N(0,t)\)</li>
+<li><strong>Ito Multiplication Table:</strong> \((dW_t)^2=dt,\qquad dt\,dW_t=0,\qquad (dt)^2=0\)</li>
+<li><strong>Quadratic Covariation with Correlation:</strong> \(dW_t^X dW_t^Y=\rho\,dt\)</li>
+<li><strong>Stochastic Integral Mean Zero:</strong> \(E\left[\int_0^tH_s\,dW_s\right]=0\)</li>
+<li><strong>Ito Isometry:</strong> \(E\left[\left(\int_0^tH_s\,dW_s\right)^2\right]=E\left[\int_0^tH_s^2\,ds\right]\)</li>
+<li><strong>Ito Formula, Time-Dependent:</strong> \(df(t,X_t)=f_tdt+f_xdX_t+\frac12f_{xx}(dX_t)^2\)</li>
+<li><strong>Ito Formula, One Variable:</strong> \(df(X_t)=f'(X_t)dX_t+\frac12f''(X_t)d\langle X\rangle_t\)</li>
+<li><strong>Ito Product Rule:</strong> \(d(X_tY_t)=X_tdY_t+Y_tdX_t+d\langle X,Y\rangle_t\)</li>
+<li><strong>Logarithm Rule for GBM:</strong> \(\frac{dS_t}{S_t}=\mu dt+\sigma dW_t\quad\Longrightarrow\quad d\log S_t=(\mu-\tfrac12\sigma^2)dt+\sigma dW_t\)</li>
+<li><strong>Brownian Exponential Martingale:</strong> \(M_t=\exp(\theta W_t-\tfrac12\theta^2t)\)</li>
+<li><strong>Diffusion Generator:</strong> \(dX_t=b(X_t)dt+\sqrt{a(X_t)}dW_t\quad\Longrightarrow\quad \mathcal Lf=b f'+\tfrac12a f'' \)</li>
+<li><strong>Scale Function Equation:</strong> \(b(x)s'(x)+\tfrac12a(x)s''(x)=0\)</li>
+<li><strong>Scale Function Integral Formula:</strong> \(s(x)=\int^x\exp\left(\int^y-\frac{2b(z)}{a(z)}\,dz\right)dy\)</li>
+</ul></div>
+<div class="cheat-topic"><h3>Girsanov and Risk-Neutral Pricing</h3><ul class="cheat-list">
+<li><strong>Stochastic Exponential Density:</strong> \(Z_t=\mathcal E\left(\int_0^t\theta_s\,dW_s\right),\qquad dZ_t=Z_t\theta_t\,dW_t\)</li>
+<li><strong>Girsanov Theorem:</strong> \(\frac{dQ}{dP}\Big|_{\mathcal F_t}=\mathcal E\left(\int_0^t\theta_s\,dW_s\right),\qquad \widetilde W_t=W_t-\int_0^t\theta_s\,ds\)</li>
+<li><strong>Constant-Theta Girsanov Form:</strong> \(\frac{dQ}{dP}=\exp(-\theta W_T-\tfrac12\theta^2T),\qquad W_t^Q=W_t+\theta t\)</li>
+<li><strong>Change of Measure Expectation:</strong> \(E^Q[Y]=E^P[Z_TY],\qquad Z_T=\frac{dQ}{dP}\Big|_{\mathcal F_T}\)</li>
+<li><strong>Risk-Neutral Drift Condition:</strong> \(\frac{dS_t}{S_t}=r\,dt+\text{volatility terms under }Q\)</li>
+<li><strong>Risk-Neutral Pricing:</strong> \(V_0=e^{-rT}E^Q[\text{payoff at }T]\)</li>
+<li><strong>Multidimensional Market Price of Risk:</strong> \(d\widetilde B_t^i=dB_t^i+\theta_i dt,\qquad dB_t^i=d\widetilde B_t^i-\theta_i dt\)</li>
+<li><strong>Correlated Brownian Decomposition:</strong> \(W_t^2=\rho B_t^1+\sqrt{1-\rho^2}\,B_t^2\)</li>
+</ul></div>
+<div class="cheat-topic"><h3>Geometric Brownian Motion and Option Formulas</h3><ul class="cheat-list">
+<li><strong>GBM Solution:</strong> \(\frac{dS_t}{S_t}=\mu dt+\sigma dW_t\quad\Longrightarrow\quad S_T=S_0\exp\left((\mu-\tfrac12\sigma^2)T+\sigma W_T\right)\)</li>
+<li><strong>Geometric Brownian Mean:</strong> \(\frac{dG_t}{G_t}=\alpha dt+\text{Brownian terms}\quad\Longrightarrow\quad E[G_T]=G_0e^{\alpha T}\)</li>
+<li><strong>GBM Log Law:</strong> \(\frac{dR_t}{R_t}=m dt+\nu dB_t\quad\Longrightarrow\quad \log R_T\sim N\left(\log R_0+(m-\tfrac12\nu^2)T,\nu^2T\right)\)</li>
+<li><strong>Ratio of Correlated GBMs:</strong> \(R_t=S_t^1/S_t^2,\qquad \nu_R^2=\sigma_1^2+\sigma_2^2-2\rho\sigma_1\sigma_2,\qquad m_R=\sigma_2^2-\rho\sigma_1\sigma_2\)</li>
+<li><strong>Lognormal Truncated Expectation:</strong> \(E[R_T\mathbf 1_{\{R_T&gt;K\}}]=R_0e^{mT}N(d_1),\qquad P(R_T&gt;K)=N(d_2)\)</li>
+<li><strong>Call Payoff Formula:</strong> \(E[(R_T-K)^+]=R_0e^{mT}N(d_1)-KN(d_2)\)</li>
+<li><strong>Maximum Payoff Decomposition:</strong> \(\max(R_T,K)=R_T\mathbf 1_{\{R_T&gt;K\}}+K\mathbf 1_{\{R_T\le K\}}\)</li>
+</ul></div>
+<div class="cheat-topic"><h3>SDE Solution Tools and Special Densities</h3><ul class="cheat-list">
+<li><strong>Linear ODE for Expectations:</strong> \(m'(t)=A+km(t),\quad m(0)=m_0\quad\Longrightarrow\quad m(t)=m_0e^{kt}+\frac{A}{k}(e^{kt}-1)\ (k\ne0)\)</li>
+<li><strong>Linear SDE Integrating Factor Pattern:</strong> \(dY_t=(c+kY_t)dt+\sigma Y_t dW_t\quad\Longrightarrow\quad Y_t=\Phi_t\left(Y_0+c\int_0^t\Phi_s^{-1}\,ds\right)\)</li>
+<li><strong>Ornstein-Uhlenbeck Solution:</strong> \(d\sigma_t=(-\lambda\sigma_t-c)dt+\delta dW_t\quad\Longrightarrow\quad \sigma_T=e^{-\lambda T}\sigma_0-\frac{c}{\lambda}(1-e^{-\lambda T})+\delta e^{-\lambda T}\int_0^T e^{\lambda s}dW_s\)</li>
+<li><strong>OU Stochastic Integral Variance:</strong> \(\operatorname{Var}\left(\delta e^{-\lambda T}\int_0^T e^{\lambda s}dW_s\right)=\frac{\delta^2}{2\lambda}(1-e^{-2\lambda T})\)</li>
+<li><strong>Square Transformation:</strong> \(Y_t=X_t^2\quad\Longrightarrow\quad dY_t=2X_t dX_t+(dX_t)^2\)</li>
+<li><strong>Reciprocal Transformation:</strong> \(X_t=1/S_t\quad\Longrightarrow\quad dX_t=-S_t^{-2}dS_t+S_t^{-3}(dS_t)^2\)</li>
+<li><strong>Brownian Bridge Density to Zero:</strong> \(Z_t=\sqrt{\frac{T}{T-t}}\exp\left(-\frac{W_t^2}{2(T-t)}\right),\qquad t&lt;T\)</li>
+<li><strong>Brownian Bridge Drift to Zero:</strong> \(dW_t=-\frac{W_t}{T-t}dt+d\widetilde W_t,\qquad t&lt;T\)</li>
+<li><strong>Brownian Bridge Density to Endpoint a:</strong> \(Z_t(a)=\sqrt{\frac{T}{T-t}}\exp\left(-\frac{(a-W_t)^2}{2(T-t)}+\frac{a^2}{2T}\right)\)</li>
+<li><strong>Brownian Bridge Drift to Endpoint a:</strong> \(dW_t=\frac{a-W_t}{T-t}dt+d\widetilde W_t^{(a)},\qquad t&lt;T\)</li>
+</ul></div>
+</section>
+<section id="quick-revision" class="quick-sheet"><h2>2. One-Page Quick Revision Sheet</h2><div class="note"><p>Ultra-concise last-minute sheet, focused on the highest-priority formulas.</p></div><table class="quick-table"><thead><tr><th>Formula name</th><th>Formula</th><th>When to use it</th></tr></thead><tbody>
+<tr><td>CDF and Density Relationship</td><td>\(F_X(x)=P(X\le x),\qquad f_X(x)=F_X'(x)\)</td><td>Use after finding a probability such as \(P(Y\le y)\)</td></tr>
+<tr><td>Expectation Integral</td><td>\(E[g(X)]=\int_{\text{support}} g(x)f_X(x)\,dx\)</td><td>Use when the density is known and an expectation is requested</td></tr>
+<tr><td>Variance Identity</td><td>\(\operatorname{Var}(X)=E[X^2]-(E[X])^2\)</td><td>Use when asked for variance and you can compute moments</td></tr>
+<tr><td>Moment Generating Function</td><td>\(M_X(t)=E[e^{tX}],\qquad E[X^n]=M_X^{(n)}(0)\)</td><td>Use when asked for an MGF or when moments are easiest by differentiating</td></tr>
+<tr><td>Uniform Area Rule</td><td>\((X,Y)\sim U([0,1]^2)\quad\Longrightarrow\quad P((X,Y)\in A)=\operatorname{Area}(A)\)</td><td>Use when the event is a region in the square</td></tr>
+<tr><td>One-to-One Density Transformation</td><td>\(f_Y(y)=f_X(g^{-1}(y))\left|\frac{d}{dy}g^{-1}(y)\right|\)</td><td>Use when the transformation has one inverse on the support</td></tr>
+<tr><td>Many-to-One Density Transformation</td><td>\(f_Y(y)=\sum_i \frac{f_X(x_i)}{|g'(x_i)|},\qquad g(x_i)=y\)</td><td>Use when \(g(x)=y\) has more than one root</td></tr>
+<tr><td>Two-Dimensional Jacobian Formula</td><td>\(f_{U,V}(u,v)=f_{X,Y}(x(u,v),y(u,v))\left|\frac{\partial(x,y)}{\partial(u,v)}\right|\)</td><td>Use when two old variables are replaced by two new variables</td></tr>
+<tr><td>Normal Density</td><td>\(X\sim N(\mu,\sigma^2)\quad\Longrightarrow\quad f_X(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-(x-\mu)^2/(2\sigma^2)}\)</td><td>Use whenever a variable is normal or Brownian motion is evaluated at a fixed time</td></tr>
+<tr><td>Normal Standardization</td><td>\(P(X\le x)=N\left(\frac{x-\mu}{\sigma}\right),\qquad X\sim N(\mu,\sigma^2)\)</td><td>Use for events involving a normal or lognormal variable</td></tr>
+<tr><td>Normal Exponential Moment</td><td>\(W_t\sim N(0,t)\quad\Longrightarrow\quad E[e^{uW_t}]=e^{u^2t/2}\)</td><td>Use when the expectation contains \(e^{uW_t}\)</td></tr>
+<tr><td>Lognormal Moment</td><td>\(Y=e^X,\ X\sim N(m,v)\quad\Longrightarrow\quad E[Y^q]=e^{qm+q^2v/2}\)</td><td>Use when \(\log Y\) is normal</td></tr>
+<tr><td>Gamma Density</td><td>\(X\sim\Gamma(k,\lambda)\quad\Longrightarrow\quad f_X(x)=\frac{\lambda^k}{\Gamma(k)}x^{k-1}e^{-\lambda x},\quad x\gt0\)</td><td>Use when the density looks like a power times an exponential</td></tr>
+<tr><td>Gamma Mean, Variance, and MGF</td><td>\(E[X]=\frac{k}{\lambda},\qquad \operatorname{Var}(X)=\frac{k}{\lambda^2},\qquad M_X(t)=\left(1-\frac{t}{\lambda}\right)^{-k}\)</td><td>Use when \(X\sim\Gamma(k,\lambda)\)</td></tr>
+<tr><td>Gamma Sum Rule</td><td>\(X\sim\Gamma(a,\lambda),\ Y\sim\Gamma(b,\lambda),\ X\perp Y\quad\Longrightarrow\quad X+Y\sim\Gamma(a+b,\lambda)\)</td><td>Use when independent gamma variables are added</td></tr>
+<tr><td>Gamma Function Recursion</td><td>\(\Gamma(q+1)=q\Gamma(q),\qquad \Gamma(n)=(n-1)!\)</td><td>Use when expressions contain \(\Gamma(\alpha+1)\), \(\Gamma(n)\), or factorials</td></tr>
+<tr><td>Beta Integral</td><td>\(\int_0^1x^{u-1}(1-x)^{v-1}\,dx=\frac{\Gamma(u)\Gamma(v)}{\Gamma(u+v)}\)</td><td>Use for integrals over \([0,1]\) with powers of \(x\) and \(1-x\)</td></tr>
+<tr><td>Beta Density</td><td>\(X\sim\operatorname{Beta}(\alpha,\beta)\quad\Longrightarrow\quad f_X(x)=\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}x^{\alpha-1}(1-x)^{\beta-1},\quad0\lt x\lt1\)</td><td>Use when a variable is between 0 and 1 with powers of \(x\) and \(1-x\)</td></tr>
+<tr><td>Beta Mean and Variance</td><td>\(E[X]=\frac{\alpha}{\alpha+\beta},\qquad \operatorname{Var}(X)=\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}\)</td><td>Use when \(X\sim\operatorname{Beta}(\alpha,\beta)\)</td></tr>
+<tr><td>Beta-Gamma Relationship</td><td>\(X\sim\Gamma(a,\lambda),\ Y\sim\Gamma(b,\lambda),\ X\perp Y\quad\Longrightarrow\quad \frac{X}{X+Y}\sim\operatorname{Beta}(a,b),\quad X+Y\sim\Gamma(a+b,\lambda)\)</td><td>Use for \(X/(X+Y)\) with independent same-rate gammas</td></tr>
+<tr><td>Exponential Distribution</td><td>\(X\sim\operatorname{Exp}(\lambda)\quad\Longleftrightarrow\quad f_X(x)=\lambda e^{-\lambda x},\ x\gt0,\qquad E[X]=1/\lambda\)</td><td>Use when density is rate times a decaying exponential</td></tr>
+<tr><td>Geometric Distribution on 1,2,...</td><td>\(P(N=n)=p(1-p)^{n-1},\qquad E[N]=\frac1p,\qquad \operatorname{Var}(N)=\frac{1-p}{p^2}\)</td><td>Use when support is \(1,2,\ldots\)</td></tr>
+<tr><td>Pascal Distribution on 0,1,...</td><td>\(P(N=n)=\binom{n+r-1}{n}(1-p)^rp^n,\quad E[N]=\frac{rp}{1-p},\quad \operatorname{Var}(N)=\frac{rp}{(1-p)^2}\)</td><td>Use when support is \(0,1,2,\ldots\) and the mass has \(\binom{n+r-1}{n}\)</td></tr>
+<tr><td>Poisson Distribution</td><td>\(P(N=n)=e^{-m}\frac{m^n}{n!},\qquad E[N]=m,\qquad \operatorname{Var}(N)=m\)</td><td>Use when a probability mass looks like \(e^{-m}m^n/n!\)</td></tr>
+<tr><td>Exponential Series</td><td>\(\sum_{n=0}^{\infty}\frac{a^n}{n!}=e^a\)</td><td>Use when a sum contains powers divided by factorials</td></tr>
+<tr><td>Discrete-Continuous Joint Law</td><td>\(f_{N,X}(n,x)=P(N=n)f_{X|N=n}(x)\)</td><td>Use when \(N\) is discrete and \(X|N=n\) has a density</td></tr>
+<tr><td>Marginal Mixture Density</td><td>\(f_X(x)=\sum_n P(N=n)f_{X|N=n}(x)\)</td><td>Use when \(X\) is given conditionally on \(N\)</td></tr>
+<tr><td>Bayes Formula for Mixed Variables</td><td>\(P(N=n|X=x)=\frac{P(N=n)f_{X|N=n}(x)}{f_X(x)}\)</td><td>Use when a posterior distribution of \(N\) is requested</td></tr>
+<tr><td>Law of Total Expectation</td><td>\(E[X]=E[E[X|Y]]\)</td><td>Use when conditional means are easier than direct integration</td></tr>
+<tr><td>Law of Total Variance</td><td>\(\operatorname{Var}(X)=E[\operatorname{Var}(X|Y)]+\operatorname{Var}(E[X|Y])\)</td><td>Use when \(X|Y\) has known mean and variance</td></tr>
+<tr><td>Brownian Fixed-Time Distribution</td><td>\(W_t-W_s\sim N(0,t-s),\qquad W_t\sim N(0,t)\)</td><td>Use whenever Brownian motion is evaluated at a fixed time</td></tr>
+<tr><td>Ito Multiplication Table</td><td>\((dW_t)^2=dt,\qquad dt\,dW_t=0,\qquad (dt)^2=0\)</td><td>Use when expanding \((dX_t)^2\) or applying Ito formula</td></tr>
+<tr><td>Quadratic Covariation with Correlation</td><td>\(dW_t^X dW_t^Y=\rho\,dt\)</td><td>Use when Brownian motions have correlation \(\rho\)</td></tr>
+<tr><td>Stochastic Integral Mean Zero</td><td>\(E\left[\int_0^tH_s\,dW_s\right]=0\)</td><td>Use when an SDE contains a stochastic integral and you need the mean</td></tr>
+<tr><td>Ito Isometry</td><td>\(E\left[\left(\int_0^tH_s\,dW_s\right)^2\right]=E\left[\int_0^tH_s^2\,ds\right]\)</td><td>Use when an expression contains \(E[(\int H\,dW)^2]\)</td></tr>
+<tr><td>Ito Formula, Time-Dependent</td><td>\(df(t,X_t)=f_tdt+f_xdX_t+\frac12f_{xx}(dX_t)^2\)</td><td>Use whenever \(Y_t=f(t,X_t)\)</td></tr>
+<tr><td>Ito Formula, One Variable</td><td>\(df(X_t)=f'(X_t)dX_t+\frac12f''(X_t)d\langle X\rangle_t\)</td><td>Use when \(Y_t=f(X_t)\)</td></tr>
+<tr><td>Ito Product Rule</td><td>\(d(X_tY_t)=X_tdY_t+Y_tdX_t+d\langle X,Y\rangle_t\)</td><td>Use when differentiating a product of stochastic processes</td></tr>
+<tr><td>Logarithm Rule for GBM</td><td>\(\frac{dS_t}{S_t}=\mu dt+\sigma dW_t\quad\Longrightarrow\quad d\log S_t=(\mu-\tfrac12\sigma^2)dt+\sigma dW_t\)</td><td>Use for stock-price dynamics in proportional form</td></tr>
+<tr><td>Brownian Exponential Martingale</td><td>\(M_t=\exp(\theta W_t-\tfrac12\theta^2t)\)</td><td>Use when an exponential of Brownian motion appears</td></tr>
+<tr><td>Diffusion Generator</td><td>\(dX_t=b(X_t)dt+\sqrt{a(X_t)}dW_t\quad\Longrightarrow\quad \mathcal Lf=b f'+\tfrac12a f'' \)</td><td>Use when the question mentions generator or local martingale \(s(X_t)\)</td></tr>
+<tr><td>Scale Function Equation</td><td>\(b(x)s'(x)+\tfrac12a(x)s''(x)=0\)</td><td>Use when asked for a scale function or martingale transform</td></tr>
+<tr><td>Scale Function Integral Formula</td><td>\(s(x)=\int^x\exp\left(\int^y-\frac{2b(z)}{a(z)}\,dz\right)dy\)</td><td>Use when \(b(x)\) and \(a(x)\) are given and a scale function is requested</td></tr>
+<tr><td>Stochastic Exponential Density</td><td>\(Z_t=\mathcal E\left(\int_0^t\theta_s\,dW_s\right),\qquad dZ_t=Z_t\theta_t\,dW_t\)</td><td>Use when \(dQ/dP\) is given by a positive martingale</td></tr>
+<tr><td>Girsanov Theorem</td><td>\(\frac{dQ}{dP}\Big|_{\mathcal F_t}=\mathcal E\left(\int_0^t\theta_s\,dW_s\right),\qquad \widetilde W_t=W_t-\int_0^t\theta_s\,ds\)</td><td>Use when a new probability measure is defined by a density</td></tr>
+<tr><td>Constant-Theta Girsanov Form</td><td>\(\frac{dQ}{dP}=\exp(-\theta W_T-\tfrac12\theta^2T),\qquad W_t^Q=W_t+\theta t\)</td><td>Use for constant market price of risk problems</td></tr>
+<tr><td>Change of Measure Expectation</td><td>\(E^Q[Y]=E^P[Z_TY],\qquad Z_T=\frac{dQ}{dP}\Big|_{\mathcal F_T}\)</td><td>Use when a measure is defined by \(dQ/dP=Z_T\)</td></tr>
+<tr><td>Risk-Neutral Drift Condition</td><td>\(\frac{dS_t}{S_t}=r\,dt+\text{volatility terms under }Q\)</td><td>Use before pricing derivatives</td></tr>
+<tr><td>Risk-Neutral Pricing</td><td>\(V_0=e^{-rT}E^Q[\text{payoff at }T]\)</td><td>Use after finding or being given risk-neutral dynamics</td></tr>
+<tr><td>Multidimensional Market Price of Risk</td><td>\(d\widetilde B_t^i=dB_t^i+\theta_i dt,\qquad dB_t^i=d\widetilde B_t^i-\theta_i dt\)</td><td>Use after rewriting correlated Brownian motions using independent factors</td></tr>
+<tr><td>Correlated Brownian Decomposition</td><td>\(W_t^2=\rho B_t^1+\sqrt{1-\rho^2}\,B_t^2\)</td><td>Use when Brownian motions have correlation \(\rho\)</td></tr>
+<tr><td>GBM Solution</td><td>\(\frac{dS_t}{S_t}=\mu dt+\sigma dW_t\quad\Longrightarrow\quad S_T=S_0\exp\left((\mu-\tfrac12\sigma^2)T+\sigma W_T\right)\)</td><td>Use when an SDE is proportional in \(S_t\)</td></tr>
+<tr><td>Geometric Brownian Mean</td><td>\(\frac{dG_t}{G_t}=\alpha dt+\text{Brownian terms}\quad\Longrightarrow\quad E[G_T]=G_0e^{\alpha T}\)</td><td>Use when an SDE has \(dG/G=\alpha dt+\) martingale terms</td></tr>
+<tr><td>GBM Log Law</td><td>\(\frac{dR_t}{R_t}=m dt+\nu dB_t\quad\Longrightarrow\quad \log R_T\sim N\left(\log R_0+(m-\tfrac12\nu^2)T,\nu^2T\right)\)</td><td>Use when a payoff depends on a lognormal variable</td></tr>
+<tr><td>Ratio of Correlated GBMs</td><td>\(R_t=S_t^1/S_t^2,\qquad \nu_R^2=\sigma_1^2+\sigma_2^2-2\rho\sigma_1\sigma_2,\qquad m_R=\sigma_2^2-\rho\sigma_1\sigma_2\)</td><td>Use when two correlated GBMs appear as a quotient</td></tr>
+<tr><td>Lognormal Truncated Expectation</td><td>\(E[R_T\mathbf 1_{\{R_T&gt;K\}}]=R_0e^{mT}N(d_1),\qquad P(R_T&gt;K)=N(d_2)\)</td><td>Use when the payoff contains \(R_T&gt;K\) or \((R_T-K)^+\)</td></tr>
+<tr><td>Call Payoff Formula</td><td>\(E[(R_T-K)^+]=R_0e^{mT}N(d_1)-KN(d_2)\)</td><td>Use when payoff is exactly \((R_T-K)^+\)</td></tr>
+<tr><td>Linear ODE for Expectations</td><td>\(m'(t)=A+km(t),\quad m(0)=m_0\quad\Longrightarrow\quad m(t)=m_0e^{kt}+\frac{A}{k}(e^{kt}-1)\ (k\ne0)\)</td><td>Use after taking expectations and removing the mean-zero stochastic integral</td></tr>
+<tr><td>Linear SDE Integrating Factor Pattern</td><td>\(dY_t=(c+kY_t)dt+\sigma Y_t dW_t\quad\Longrightarrow\quad Y_t=\Phi_t\left(Y_0+c\int_0^t\Phi_s^{-1}\,ds\right)\)</td><td>Use when the SDE is linear in \(Y_t\)</td></tr>
+<tr><td>Ornstein-Uhlenbeck Solution</td><td>\(d\sigma_t=(-\lambda\sigma_t-c)dt+\delta dW_t\quad\Longrightarrow\quad \sigma_T=e^{-\lambda T}\sigma_0-\frac{c}{\lambda}(1-e^{-\lambda T})+\delta e^{-\lambda T}\int_0^T e^{\lambda s}dW_s\)</td><td>Use for OU-type volatility dynamics</td></tr>
+<tr><td>OU Stochastic Integral Variance</td><td>\(\operatorname{Var}\left(\delta e^{-\lambda T}\int_0^T e^{\lambda s}dW_s\right)=\frac{\delta^2}{2\lambda}(1-e^{-2\lambda T})\)</td><td>Use after solving an OU SDE and needing a second moment</td></tr>
+<tr><td>Square Transformation</td><td>\(Y_t=X_t^2\quad\Longrightarrow\quad dY_t=2X_t dX_t+(dX_t)^2\)</td><td>Use when the problem sets \(Y_t=X_t^2\) or asks for \(E[X_t^2]\)</td></tr>
+<tr><td>Brownian Bridge Density to Zero</td><td>\(Z_t=\sqrt{\frac{T}{T-t}}\exp\left(-\frac{W_t^2}{2(T-t)}\right),\qquad t&lt;T\)</td><td>Use when this exact square-root and exponential expression appears</td></tr>
+<tr><td>Brownian Bridge Drift to Zero</td><td>\(dW_t=-\frac{W_t}{T-t}dt+d\widetilde W_t,\qquad t&lt;T\)</td><td>Use when endpoint zero is imposed</td></tr>
+</tbody></table></section>
+<section id="selection-guide"><h2>4. Formula Selection Guide</h2><table><thead><tr><th>If the question gives or asks for...</th><th>Use this formula path</th></tr></thead><tbody>
+<tr><td>The question asks for the density of a transformed variable.</td><td>Use CDF and Density Relationship, then One-to-One or Many-to-One Density Transformation.</td></tr>
+<tr><td>The transformation uses two variables such as a sum and ratio.</td><td>Use Two-Dimensional Jacobian Formula.</td></tr>
+<tr><td>You see independent gamma variables with the same rate.</td><td>Use Gamma Sum Rule and Beta-Gamma Relationship.</td></tr>
+<tr><td>A discrete variable mixes a continuous density.</td><td>Use Discrete-Continuous Joint Law and Marginal Mixture Density.</td></tr>
+<tr><td>The question asks for the conditional distribution of a discrete variable after observing a continuous value.</td><td>Use Bayes Formula for Mixed Variables, then identify a Poisson or shifted Poisson form.</td></tr>
+<tr><td>You need a mean or variance from conditioning.</td><td>Use Law of Total Expectation and Law of Total Variance.</td></tr>
+<tr><td>A stochastic process is transformed by square, log, reciprocal, or exponential.</td><td>Use Ito Formula and the Ito Multiplication Table.</td></tr>
+<tr><td>You need a second moment of a stochastic integral.</td><td>Use Ito Isometry.</td></tr>
+<tr><td>A new measure is defined by a density process.</td><td>Use Stochastic Exponential Density and Girsanov Theorem.</td></tr>
+<tr><td>You are pricing a derivative.</td><td>Find risk-neutral dynamics, then use Risk-Neutral Pricing.</td></tr>
+<tr><td>The payoff depends on a stock ratio.</td><td>Use Ratio of Correlated GBMs, GBM Log Law, and lognormal option formulas.</td></tr>
+<tr><td>A process has a linear SDE or expectation ODE.</td><td>Use Linear SDE Integrating Factor Pattern or Linear ODE for Expectations.</td></tr>
+<tr><td>A Brownian bridge density appears.</td><td>Use Brownian Bridge Density and the matching Brownian Bridge Drift.</td></tr>
+</tbody></table></section>
+<section id="formula-comparison"><h2>5. Formula Comparison</h2><table class="comparison"><thead><tr><th>Similar formulas</th><th>Difference and how to avoid confusion</th></tr></thead><tbody>
+<tr><td>CDF method vs density transformation</td><td>CDF first finds a probability and differentiates. Density transformation uses inverse derivatives directly. Use CDF when the region has cases.</td></tr>
+<tr><td>One-to-one vs many-to-one transformations</td><td>One-to-one has one inverse value. Many-to-one has several roots and requires summing all contributions.</td></tr>
+<tr><td>Gamma vs beta distributions</td><td>Gamma lives on positive values. Beta lives on the interval (0,1). Ratios of same-rate gammas often become beta.</td></tr>
+<tr><td>Geometric vs Pascal vs Poisson</td><td>Geometric here starts at 1. Pascal here starts at 0 and has a binomial coefficient. Poisson starts at 0 and has e^{-m}m^n/n!.</td></tr>
+<tr><td>Expectation vs variance by conditioning</td><td>For means, average conditional means. For variance, add average conditional variance and variance of conditional mean.</td></tr>
+<tr><td>Ito formula vs ordinary chain rule</td><td>Ito formula has the extra second-order term because (dW)^2=dt. Ordinary calculus misses this.</td></tr>
+<tr><td>Girsanov sign conventions</td><td>Always write the Brownian relation first. If W-tilde = W - integral theta ds, then dW = dW-tilde + theta dt.</td></tr>
+<tr><td>Physical measure P vs risk-neutral measure Q</td><td>Use P for real-world dynamics if asked. Use Q for pricing, where tradable assets drift at r.</td></tr>
+<tr><td>Call payoff vs maximum payoff</td><td>(R_T-K)^+ pays zero below K. max(R_T,K) pays K below K. Their formulas differ.</td></tr>
+<tr><td>GBM mean vs GBM log drift</td><td>The mean grows with proportional drift alpha. The log has drift alpha - volatility squared over 2.</td></tr>
+</tbody></table></section>
+<section id="high-priority"><h2>6. High-Priority Exam Formulas</h2><div class="note"><p>Memorize these first because they unlock the most common exam question types.</p></div><ol class="priority-list">
+<li><a href="#cdf-and-density-relationship">CDF and Density Relationship</a></li>
+<li><a href="#expectation-integral">Expectation Integral</a></li>
+<li><a href="#variance-identity">Variance Identity</a></li>
+<li><a href="#moment-generating-function">Moment Generating Function</a></li>
+<li><a href="#uniform-area-rule">Uniform Area Rule</a></li>
+<li><a href="#one-to-one-density-transformation">One-to-One Density Transformation</a></li>
+<li><a href="#many-to-one-density-transformation">Many-to-One Density Transformation</a></li>
+<li><a href="#two-dimensional-jacobian-formula">Two-Dimensional Jacobian Formula</a></li>
+<li><a href="#normal-density">Normal Density</a></li>
+<li><a href="#normal-standardization">Normal Standardization</a></li>
+<li><a href="#normal-exponential-moment">Normal Exponential Moment</a></li>
+<li><a href="#lognormal-moment">Lognormal Moment</a></li>
+<li><a href="#gamma-density">Gamma Density</a></li>
+<li><a href="#gamma-mean-variance-and-mgf">Gamma Mean, Variance, and MGF</a></li>
+<li><a href="#gamma-sum-rule">Gamma Sum Rule</a></li>
+<li><a href="#gamma-function-recursion">Gamma Function Recursion</a></li>
+<li><a href="#beta-integral">Beta Integral</a></li>
+<li><a href="#beta-density">Beta Density</a></li>
+<li><a href="#beta-mean-and-variance">Beta Mean and Variance</a></li>
+<li><a href="#beta-gamma-relationship">Beta-Gamma Relationship</a></li>
+<li><a href="#exponential-distribution">Exponential Distribution</a></li>
+<li><a href="#geometric-distribution-on-1-2">Geometric Distribution on 1,2,...</a></li>
+<li><a href="#pascal-distribution-on-0-1">Pascal Distribution on 0,1,...</a></li>
+<li><a href="#poisson-distribution">Poisson Distribution</a></li>
+<li><a href="#exponential-series">Exponential Series</a></li>
+<li><a href="#discrete-continuous-joint-law">Discrete-Continuous Joint Law</a></li>
+<li><a href="#marginal-mixture-density">Marginal Mixture Density</a></li>
+<li><a href="#bayes-formula-for-mixed-variables">Bayes Formula for Mixed Variables</a></li>
+<li><a href="#law-of-total-expectation">Law of Total Expectation</a></li>
+<li><a href="#law-of-total-variance">Law of Total Variance</a></li>
+<li><a href="#brownian-fixed-time-distribution">Brownian Fixed-Time Distribution</a></li>
+<li><a href="#ito-multiplication-table">Ito Multiplication Table</a></li>
+<li><a href="#quadratic-covariation-with-correlation">Quadratic Covariation with Correlation</a></li>
+<li><a href="#stochastic-integral-mean-zero">Stochastic Integral Mean Zero</a></li>
+<li><a href="#ito-isometry">Ito Isometry</a></li>
+<li><a href="#ito-formula-time-dependent">Ito Formula, Time-Dependent</a></li>
+<li><a href="#ito-formula-one-variable">Ito Formula, One Variable</a></li>
+<li><a href="#ito-product-rule">Ito Product Rule</a></li>
+<li><a href="#logarithm-rule-for-gbm">Logarithm Rule for GBM</a></li>
+<li><a href="#brownian-exponential-martingale">Brownian Exponential Martingale</a></li>
+<li><a href="#diffusion-generator">Diffusion Generator</a></li>
+<li><a href="#scale-function-equation">Scale Function Equation</a></li>
+<li><a href="#scale-function-integral-formula">Scale Function Integral Formula</a></li>
+<li><a href="#stochastic-exponential-density">Stochastic Exponential Density</a></li>
+<li><a href="#girsanov-theorem">Girsanov Theorem</a></li>
+<li><a href="#constant-theta-girsanov-form">Constant-Theta Girsanov Form</a></li>
+<li><a href="#change-of-measure-expectation">Change of Measure Expectation</a></li>
+<li><a href="#risk-neutral-drift-condition">Risk-Neutral Drift Condition</a></li>
+<li><a href="#risk-neutral-pricing">Risk-Neutral Pricing</a></li>
+<li><a href="#multidimensional-market-price-of-risk">Multidimensional Market Price of Risk</a></li>
+<li><a href="#correlated-brownian-decomposition">Correlated Brownian Decomposition</a></li>
+<li><a href="#gbm-solution">GBM Solution</a></li>
+<li><a href="#geometric-brownian-mean">Geometric Brownian Mean</a></li>
+<li><a href="#gbm-log-law">GBM Log Law</a></li>
+<li><a href="#ratio-of-correlated-gbms">Ratio of Correlated GBMs</a></li>
+<li><a href="#lognormal-truncated-expectation">Lognormal Truncated Expectation</a></li>
+<li><a href="#call-payoff-formula">Call Payoff Formula</a></li>
+<li><a href="#linear-ode-for-expectations">Linear ODE for Expectations</a></li>
+<li><a href="#linear-sde-integrating-factor-pattern">Linear SDE Integrating Factor Pattern</a></li>
+<li><a href="#ornstein-uhlenbeck-solution">Ornstein-Uhlenbeck Solution</a></li>
+<li><a href="#ou-stochastic-integral-variance">OU Stochastic Integral Variance</a></li>
+<li><a href="#square-transformation">Square Transformation</a></li>
+<li><a href="#brownian-bridge-density-to-zero">Brownian Bridge Density to Zero</a></li>
+<li><a href="#brownian-bridge-drift-to-zero">Brownian Bridge Drift to Zero</a></li>
+</ol></section>
+</main><footer><p>Generated as a complete formula handbook for the Risk Modeling and Probability past-paper set.</p></footer></body></html>
